@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des Calendriers ESP</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Gestion des Identifiants de Calendrier</h1>
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+    <br>
+    <form method="POST" id="calendar-form">
+        <div id="calendar-list">
+            {% for esp_id, info in devices.items() %}
+            <div class="esp-block">
+                <span class="esp-id"><strong>{{ esp_id }}</strong></span>
+                <span class="separator">|</span>
+
+                <label>ID Calendrier :</label>
+                <input type="text" name="calendar_{{ esp_id }}" value="{{ info.get('calendar_id', '') }}" size="50">
+            </div>
+            {% endfor %}
+        </div>
+        <br>
+        <button type="submit">Enregistrer</button>
+    </form>
+    <br>
+    <a href="/">← Retour à l'accueil</a>
+</body>
+</html>
