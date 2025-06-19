@@ -13,7 +13,7 @@ binary_byte = array([128, 64, 32, 16, 8, 4, 2, 1])
 char_widths = {}  # dictionnaire des largeurs dynamiques
 
 def createTMPimage(ASCII):
-    font = ImageFont.truetype(f"font2bytes-main/fonts/{fontname}", height - font_offset)
+    font = ImageFont.truetype(f"fonts/{fontname}", height - font_offset)
     char = chr(ASCII)
     text_width = int(font.getlength(char))
     char_widths[ASCII] = text_width
@@ -21,11 +21,11 @@ def createTMPimage(ASCII):
     image = Image.new('RGB', (text_width, height), color=(0, 0, 0))
     draw = ImageDraw.Draw(image)
     draw.text((0, 0), char, font=font)
-    image.save(f'font2bytes-main/tmp/{ASCII}.bmp')
+    image.save(f'tmp/{ASCII}.bmp')
 
 
 def readImage2Binary(ASCII):
-    image = Image.open(f'font2bytes-main/tmp/{ASCII}.bmp')
+    image = Image.open(f'tmp/{ASCII}.bmp')
     data = asarray(image)
     binary_map = data[:, :, 0]
     return binary_map
@@ -83,7 +83,7 @@ def write_letter(f, ASCII, hex_map, width):
 
 
 if __name__ == "__main__":
-    with open(f'font2bytes-main/output/{filename}.cpp', 'w', encoding='utf-8') as f:
+    with open(f'output/{filename}.cpp', 'w', encoding='utf-8') as f:
         write_file_intro(f)
 
         for ASCII in range(32, 255):
