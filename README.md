@@ -56,9 +56,9 @@ Project_calendar_rooms/
 ├── Hardware/                        # Hardware design files
 │   ├── cadre room V3.svg/          # Display frame design (version 3)
 │   └── esp32 room pcb/             # Custom PCB design for ESP32
-├── code_service_server_python/      # Server-side Python applications
-│   ├── mqtt_service/               # MQTT broker and message handling service
-│   └── web_local_consol/          # Local web console for room management
+└── code_service_server_python/      # Server-side Python applications
+    ├── mqtt_service/               # MQTT broker and message handling service
+    └── web_local_consol/          # Local web console for room management
 ```
 
 ## License
