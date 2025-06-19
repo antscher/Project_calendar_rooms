@@ -46,3 +46,27 @@ The Room Calendar Management System is a modern solution for managing meeting ro
 - Reduced booking conflicts
 - Enhanced user experience
 - Energy-efficient operation
+
+## Project Structure
+```
+Project_calendar_rooms/
+├── code_esp32/                      # ESP32 firmware and related tools
+|   ├── font2bytes-dynamics/         # Tool for converting fonts to byte arrays
+│   └── main/                        # Main ESP32 application code
+├── Hardware/                        # Hardware design files
+│   ├── cadre room V3.svg/          # Display frame design (version 3)
+│   └── esp32 room pcb/             # Custom PCB design for ESP32
+├── code_service_server_python/      # Server-side Python applications
+│   ├── mqtt_service/               # MQTT broker and message handling service
+│   └── web_local_consol/          # Local web console for room management
+```
+
+## License
+This project is licensed under GNU GENERAL PUBLIC LICENSE V3 - see the LICENSE.md file for details.
+
+## Main Contributor
+This project was developed by Antoine Scherpereel as part of an intership project at ISU (International Space University).
+
+For questions or support, contact:
+- Antoine Scherpereel
+- Email: antoine.scherpereel@isunet.edu
