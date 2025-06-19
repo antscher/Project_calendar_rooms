@@ -10,6 +10,7 @@ This is a modified version of the original [font2bytes](https://github.com/TheHe
 
 My contribution introduces **dynamic character widths**:  
 🔠 Each character now has its own **individual width** depending on its actual pixel width, instead of a fixed-size grid. This allows more compact and proportional text rendering on e-paper displays.
+🔠 Also now all the ASCII characters are implemented (exemple : @)
 
 However, you have to also modify the library of waveshare (there is an example in main in src of this repo)
 
