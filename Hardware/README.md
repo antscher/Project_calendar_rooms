@@ -1,6 +1,6 @@
 # Hardware Components Selection
 
-## ESP32-S2 Microcontroller : Dev kit
+## ESP32-S2 Microcontroller : ESP32-S2 Dev kit from waveshare
 - **Why this choice?**
   - Built-in WiFi capabilities for network connectivity
   - Low power consumption with deep sleep modes
