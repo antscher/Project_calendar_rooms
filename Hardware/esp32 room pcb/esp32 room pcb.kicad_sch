@@ -1169,49 +1169,42 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_Wuerth_450301014042"
+		(symbol "SLW-864574-5A-RA-N-D:SLW-864574-5A-RA-N-D"
 			(pin_names
-				(offset 1)
-				(hide yes)
+				(offset 1.016)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "SW"
-				(at 0 5.08 0)
+			(property "Reference" "S"
+				(at -2.54 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Value" "SW_Wuerth_450301014042"
-				(at 0 -5.08 0)
+			(property "Value" "SLW-864574-5A-RA-N-D"
+				(at -2.54 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left top)
 				)
 			)
-			(property "Footprint" "Button_Switch_THT:SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm"
-				(at 0 -10.16 0)
+			(property "Footprint" "SLW-864574-5A-RA-N-D:SW_SLW-864574-5A-RA-N-D"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.we-online.com/components/products/datasheet/450301014042.pdf"
-				(at 0 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Switch slide, single pole double throw"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1220,7 +1213,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "changeover single-pole opposite-side-connection double-throw spdt ON-ON"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1229,21 +1222,123 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SW*Wuerth*WS*SLTV*10x2.5x6.4*P2.54mm*"
+			(property "MF" "Same Sky"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(symbol "SW_Wuerth_450301014042_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.4572)
+			(property "Description_1" "8.6 x 4.5 x 6.2 mm, 5 mm Raised Slide Actuator, Right Angle, Through Hole, Slide Switch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Package" "None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Price" "None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Check_prices" "https://www.snapeda.com/parts/SLW-864574-5A-RA-N-D/Same+Sky/view-part/?ref=eda"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "PARTREV" "1.01"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SnapEDA_Link" "https://www.snapeda.com/parts/SLW-864574-5A-RA-N-D/Same+Sky/view-part/?ref=snap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MP" "SLW-864574-5A-RA-N-D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Availability" "In Stock"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "Same Sky"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "SLW-864574-5A-RA-N-D_0_0"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -5.08 0)
+					)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
@@ -1252,10 +1347,10 @@
 				)
 				(polyline
 					(pts
-						(xy -1.651 0.254) (xy 1.651 2.286)
+						(xy -2.54 0) (xy 2.794 2.1336)
 					)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
@@ -1263,10 +1358,10 @@
 					)
 				)
 				(circle
-					(center 2.032 2.54)
-					(radius 0.4572)
+					(center 2.54 2.54)
+					(radius 0.3302)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
@@ -1274,79 +1369,90 @@
 					)
 				)
 				(circle
-					(center 2.032 -2.54)
-					(radius 0.4572)
+					(center 2.54 -2.54)
+					(radius 0.3302)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-			)
-			(symbol "SW_Wuerth_450301014042_1_1"
-				(rectangle
-					(start -3.175 3.81)
-					(end 3.175 -3.81)
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 2.921 2.54)
+					)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -2.54) (xy 2.921 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
+					(at -7.62 0 0)
 					(length 2.54)
-					(name "B"
+					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1655,7 +1761,7 @@
 	)
 	(text "System to power the ESP32 "
 		(exclude_from_sim no)
-		(at 224.282 81.026 0)
+		(at 220.98 64.516 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1748,7 +1854,7 @@
 		(uuid "7290bfbd-6c81-4621-8e82-ee0efa6b9499")
 	)
 	(no_connect
-		(at 229.87 60.96)
+		(at 214.63 60.96)
 		(uuid "782f70da-d89c-48a7-876e-f3cf41a230b8")
 	)
 	(no_connect
@@ -1817,53 +1923,53 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 55.88) (xy 229.87 55.88)
+			(xy 237.49 43.18) (xy 237.49 46.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2b0cf050-f0f6-4ed2-8d35-f8eaeb18358a")
+		(uuid "4332483b-b4bf-49fb-a7f3-000dd6c152f7")
 	)
 	(wire
 		(pts
-			(xy 234.95 43.18) (xy 237.49 43.18)
+			(xy 210.82 55.88) (xy 214.63 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "433427fa-09ce-462b-83c0-c86a4afa6f39")
+		(uuid "70026e05-b802-4e45-aaa2-ac3634632f67")
 	)
 	(wire
 		(pts
-			(xy 223.52 40.64) (xy 237.49 40.64)
+			(xy 229.87 58.42) (xy 233.68 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bcdc9023-eeb9-4f2b-bdae-e53a101907f9")
+		(uuid "94afcd0d-0fca-4533-9a6d-038fcae82cd5")
 	)
 	(wire
 		(pts
-			(xy 234.95 43.18) (xy 234.95 55.88)
+			(xy 237.49 40.64) (xy 233.68 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a887b435-73a3-4a58-bb21-98a4a4b1230d")
+	)
+	(wire
+		(pts
+			(xy 233.68 40.64) (xy 233.68 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "dcf1a23b-729f-4959-ab96-afa44714617b")
-	)
-	(wire
-		(pts
-			(xy 223.52 34.29) (xy 223.52 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fbda129e-c3bf-42f1-80a9-aaec4b37c6ee")
 	)
 	(global_label "GND"
 		(shape bidirectional)
@@ -1955,22 +2061,22 @@
 	)
 	(global_label "Vsys"
 		(shape output)
-		(at 223.52 34.29 90)
+		(at 237.49 46.99 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "10425e48-faf4-4268-a0b6-0f51e1720125")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 223.52 27.1924 90)
+			(at 237.49 54.0876 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -2285,7 +2391,7 @@
 	)
 	(global_label "GND"
 		(shape output)
-		(at 219.71 58.42 180)
+		(at 210.82 55.88 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2295,7 +2401,7 @@
 		)
 		(uuid "ea3ebf5a-055e-4b88-bfa7-7d7b39cce30b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 212.8543 58.42 0)
+			(at 203.9643 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2372,6 +2478,188 @@
 		)
 	)
 	(symbol
+		(lib_id "SLW-864574-5A-RA-N-D:SLW-864574-5A-RA-N-D")
+		(at 222.25 58.42 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "034b4724-d6fc-4642-b581-35c6aa8a8241")
+		(property "Reference" "S1"
+			(at 222.25 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SLW-864574-5A-RA-N-D"
+			(at 222.25 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:SW_SLW-864574-5A-RA-N-D"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Same Sky"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "8.6 x 4.5 x 6.2 mm, 5 mm Raised Slide Actuator, Right Angle, Through Hole, Slide Switch"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SLW-864574-5A-RA-N-D/Same+Sky/view-part/?ref=eda"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1.01"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SLW-864574-5A-RA-N-D/Same+Sky/view-part/?ref=snap"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SLW-864574-5A-RA-N-D"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Same Sky"
+			(at 222.25 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "75d5b9e5-fb05-406d-8a89-2a06bb078a45")
+		)
+		(pin "3"
+			(uuid "f3936f59-93f6-4191-b43f-85bedf18271a")
+		)
+		(pin "1"
+			(uuid "2812c1e3-768f-4f39-b86a-8bbf2d7b7807")
+		)
+		(instances
+			(project ""
+				(path "/5785d8ed-438b-4398-9b9b-75da588fdcbe"
+					(reference "S1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 242.57 40.64 0)
 		(unit 1)
@@ -2436,77 +2724,6 @@
 			(project ""
 				(path "/5785d8ed-438b-4398-9b9b-75da588fdcbe"
 					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Wuerth_450301014042")
-		(at 224.79 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "298e77b3-aad4-46d7-8e19-d49e46549114")
-		(property "Reference" "SW1"
-			(at 224.79 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Wuerth_450301014042"
-			(at 224.79 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Button_Switch_THT:SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm"
-			(at 224.79 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/450301014042.pdf"
-			(at 224.79 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Switch slide, single pole double throw"
-			(at 224.79 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "209afc07-6634-466c-818a-19877229d856")
-		)
-		(pin "1"
-			(uuid "4346a525-de35-422e-8e64-42df613400a2")
-		)
-		(pin "2"
-			(uuid "bebd5ac6-6df9-48b0-99dd-741007c25523")
-		)
-		(instances
-			(project ""
-				(path "/5785d8ed-438b-4398-9b9b-75da588fdcbe"
-					(reference "SW1")
 					(unit 1)
 				)
 			)
