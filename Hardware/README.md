@@ -28,3 +28,9 @@
 - E-ink display only draws power during updates
 - ESP32-S2 deep sleep mode < 10µA
 - Expected battery life: 2-3 years between replacing battery
+
+
+## The PCB 
+
+The pcb is made on Kicad
+So you need it to open it
