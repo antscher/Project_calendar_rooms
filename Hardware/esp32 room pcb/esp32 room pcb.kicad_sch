@@ -1169,6 +1169,145 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "SLW-864574-5A-RA-N-D:SLW-864574-5A-RA-N-D"
 			(pin_names
 				(offset 1.016)
@@ -1761,7 +1900,7 @@
 	)
 	(text "System to power the ESP32 "
 		(exclude_from_sim no)
-		(at 220.98 64.516 0)
+		(at 208.28 46.736 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1788,6 +1927,18 @@
 			)
 		)
 		(uuid "61436dc7-ca3b-4147-aa7d-bec22a444a06")
+	)
+	(junction
+		(at 227.33 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b74ac957-a1a1-43e9-94ff-48b93fddc00d")
+	)
+	(junction
+		(at 227.33 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c39215a0-fde4-4d93-b60d-fccd74eb5f6d")
 	)
 	(no_connect
 		(at 106.68 125.73)
@@ -1854,7 +2005,7 @@
 		(uuid "7290bfbd-6c81-4621-8e82-ee0efa6b9499")
 	)
 	(no_connect
-		(at 214.63 60.96)
+		(at 201.93 43.18)
 		(uuid "782f70da-d89c-48a7-876e-f3cf41a230b8")
 	)
 	(no_connect
@@ -1923,7 +2074,47 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 43.18) (xy 237.49 46.99)
+			(xy 237.49 59.69) (xy 227.33 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2147b84b-1d0c-42b1-9f75-eeea2beda7f4")
+	)
+	(wire
+		(pts
+			(xy 227.33 53.34) (xy 227.33 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29f44f7c-c9e9-4014-ac1b-58c667c3a567")
+	)
+	(wire
+		(pts
+			(xy 227.33 59.69) (xy 214.63 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "306c96c4-f61a-497e-a650-16b466cc99eb")
+	)
+	(wire
+		(pts
+			(xy 227.33 40.64) (xy 237.49 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f16192e-34c8-4761-a516-e1306c6b2e8d")
+	)
+	(wire
+		(pts
+			(xy 237.49 43.18) (xy 237.49 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1933,7 +2124,7 @@
 	)
 	(wire
 		(pts
-			(xy 210.82 55.88) (xy 214.63 55.88)
+			(xy 198.12 38.1) (xy 201.93 38.1)
 		)
 		(stroke
 			(width 0)
@@ -1943,33 +2134,23 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 58.42) (xy 233.68 58.42)
+			(xy 227.33 40.64) (xy 227.33 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76613754-2244-47b1-8782-59fa2d353bff")
+	)
+	(wire
+		(pts
+			(xy 217.17 40.64) (xy 227.33 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "94afcd0d-0fca-4533-9a6d-038fcae82cd5")
-	)
-	(wire
-		(pts
-			(xy 237.49 40.64) (xy 233.68 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a887b435-73a3-4a58-bb21-98a4a4b1230d")
-	)
-	(wire
-		(pts
-			(xy 233.68 40.64) (xy 233.68 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dcf1a23b-729f-4959-ab96-afa44714617b")
 	)
 	(global_label "GND"
 		(shape bidirectional)
@@ -2061,7 +2242,7 @@
 	)
 	(global_label "Vsys"
 		(shape output)
-		(at 237.49 46.99 270)
+		(at 214.63 59.69 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2071,7 +2252,7 @@
 		)
 		(uuid "10425e48-faf4-4268-a0b6-0f51e1720125")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 237.49 54.0876 90)
+			(at 207.5324 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2391,7 +2572,7 @@
 	)
 	(global_label "GND"
 		(shape output)
-		(at 210.82 55.88 180)
+		(at 198.12 38.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2401,7 +2582,7 @@
 		)
 		(uuid "ea3ebf5a-055e-4b88-bfa7-7d7b39cce30b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 203.9643 55.88 0)
+			(at 191.2643 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2479,7 +2660,7 @@
 	)
 	(symbol
 		(lib_id "SLW-864574-5A-RA-N-D:SLW-864574-5A-RA-N-D")
-		(at 222.25 58.42 0)
+		(at 209.55 40.64 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2488,7 +2669,7 @@
 		(dnp no)
 		(uuid "034b4724-d6fc-4642-b581-35c6aa8a8241")
 		(property "Reference" "S1"
-			(at 222.25 50.8 0)
+			(at 209.55 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2496,7 +2677,7 @@
 			)
 		)
 		(property "Value" "SLW-864574-5A-RA-N-D"
-			(at 222.25 53.34 0)
+			(at 209.55 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2504,7 +2685,7 @@
 			)
 		)
 		(property "Footprint" "Library:SW_SLW-864574-5A-RA-N-D"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2514,7 +2695,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2523,7 +2704,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2532,7 +2713,7 @@
 			)
 		)
 		(property "MF" "Same Sky"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2542,7 +2723,7 @@
 			)
 		)
 		(property "Description_1" "8.6 x 4.5 x 6.2 mm, 5 mm Raised Slide Actuator, Right Angle, Through Hole, Slide Switch"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2552,7 +2733,7 @@
 			)
 		)
 		(property "Package" "None"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2562,7 +2743,7 @@
 			)
 		)
 		(property "Price" "None"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2572,7 +2753,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/SLW-864574-5A-RA-N-D/Same+Sky/view-part/?ref=eda"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2582,7 +2763,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2592,7 +2773,7 @@
 			)
 		)
 		(property "PARTREV" "1.01"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2602,7 +2783,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SLW-864574-5A-RA-N-D/Same+Sky/view-part/?ref=snap"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2612,7 +2793,7 @@
 			)
 		)
 		(property "MP" "SLW-864574-5A-RA-N-D"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2622,7 +2803,7 @@
 			)
 		)
 		(property "Availability" "In Stock"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2632,7 +2813,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Same Sky"
-			(at 222.25 58.42 0)
+			(at 209.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2724,6 +2905,76 @@
 			(project ""
 				(path "/5785d8ed-438b-4398-9b9b-75da588fdcbe"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 227.33 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5669b29e-c21e-47f7-8dc3-7fb81fe37864")
+		(property "Reference" "C1"
+			(at 231.14 48.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 231.14 50.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 228.2952 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 227.33 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 227.33 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3d1898cc-bbbc-4b09-9933-d41169868e49")
+		)
+		(pin "2"
+			(uuid "638eb848-f9f1-4787-8c7f-729578aee8c0")
+		)
+		(instances
+			(project ""
+				(path "/5785d8ed-438b-4398-9b9b-75da588fdcbe"
+					(reference "C1")
 					(unit 1)
 				)
 			)

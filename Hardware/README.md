@@ -9,6 +9,8 @@
   - Native USB support for easy programming
   - Enough RAM for rendering the image before displaying it
 
+  Can be power supply between 10V and 1.8V theorically in reality it is needed to be superior to 2.65V
+
 ## Waveshare E-Ink Display : Spectra 7.3" from Waveshare
 - **Why this choice?**
   - Ultra-low power consumption - only uses power when refreshing
@@ -23,6 +25,24 @@
   - Low self-discharge rate
   - Long cycle life
   - Safe for fire problems
+
+  Normally the battery will stay really close to 3V during all it live cycle but a varation can cause effects.
+  Capacity (%)	Voltage (V)
+  100%	        3.0 – 3.2 V
+  90%	          3.0 – 3.1 V
+  80%	          2.95 – 3.1 V
+  50%	          2.9 – 3.0 V
+  20%	          2.8 – 2.9 V
+  10%	          2.7 – 2.8 V
+  0%          	~2.0 – 2.5 V
+
+  Note : After testing with different input voltage, the results are : 
+  - > 2.65V : work normally
+  - between 2.65 and 2.4 : work but risk of losing is SPRAM
+  - < 2.4 V : not working at all
+
+  Conclusion : we can use even if we consider there is risk of malfounctionning at the end of life
+  (Possibility utilising NVS memory but there is a limit in R/W cycle)
 
 ## Power Considerations
 - E-ink display only draws power during updates

@@ -40,7 +40,7 @@ int clear_and_close(void) {
     Debug("Clear...\r\n");
 
     // Clear the screen to white
-    EPD_7IN3E_Clear(EPD_7IN3E_WHITE);
+    //EPD_7IN3E_Clear(EPD_7IN3E_WHITE);
 
     Debug("Goto Sleep...\r\n");
     // Put the e-Paper display into sleep mode to reduce power consumption

@@ -6,7 +6,9 @@
 RTC_DATA_ATTR  char new_day= '2';
 
 void setup() {
+  delay(500);
   Serial.begin(115200);
+  //for the tension to stabilize
 
   String message =  mqtt_calendar(new_day); 
   if (new_day != '0'){
@@ -104,6 +106,7 @@ void setup() {
   Serial.println("Passage en mode Deep Sleep");
   
   //Esp go to deep sleep
+  delay(500);
   esp_deep_sleep_start();
   Serial.println("Ce message ne s'affichera pas, car l'ESP32 est en Deep Sleep !");
 

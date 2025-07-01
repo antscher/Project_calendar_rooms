@@ -106,7 +106,7 @@ bool checkAndUpdateMessage(String message) {
     }
 
   }
-  else if (message[0] == old_message[0] ){
+  else if (message[0] == old_message[0] || message[0]=='e') {
     return true;
   }
 
@@ -133,7 +133,7 @@ bool connect_MQTT() {
     delay(300); 
     Serial.println("Connecting to WiFi.."); 
   } 
-  if (compteur_erreur>=25){
+  if (compteur_erreur>=30){
     Serial.println("Failed to connect to WiFi after multiple attempts"); 
     return true;
   }
