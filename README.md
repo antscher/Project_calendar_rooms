@@ -54,11 +54,12 @@ Project_calendar_rooms/
 |   ├── font2bytes-dynamics/         # Tool for converting fonts to byte arrays
 │   └── main/                        # Main ESP32 application code
 ├── Hardware/                        # Hardware design files
-│   ├── cadre room V3.svg/          # Display frame design (version 3)
-│   └── esp32 room pcb/             # Custom PCB design for ESP32
+│   ├── cadre room V_.svg/           # Display frame design (version _)
+│   ├── Support cadre V_.stl/        # Support of the cadre to be print in 3d (version _)
+│   └── esp32 room pcb/              # Custom PCB design for ESP32
 └── code_service_server_python/      # Server-side Python applications
-    ├── mqtt_service/               # MQTT broker and message handling service
-    └── web_local_consol/          # Local web console for room management
+    ├── mqtt_service/                # MQTT broker and message handling service
+    └── web_local_consol/            # Local web console for room management
 ```
 
 ## License

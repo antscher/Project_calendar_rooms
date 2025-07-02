@@ -53,4 +53,15 @@
 ## The PCB 
 
 The pcb is made on Kicad
-So you need it to open it
+So you need it to open it (it is quite a simple design)
+
+## The support of the cadre 
+
+It is made in fusion 360, you have access to the stl to print the design
+Use M3 screws to attach it
+
+## The cadre
+
+The cadre is made with inskape, it is a .svg
+It is desin for wood of 3mm
+It need to be cut (red lines) and engrave (blue lines)

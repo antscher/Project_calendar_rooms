@@ -41,12 +41,12 @@ String mqtt_calendar(char battery) {
 
   int compteur_erreur = 0;
 
-  // Wait until the message is received or 30 seconds pass
+  // Wait until the message is received or 10 seconds pass
   while (message.isEmpty() && compteur_erreur++<1000) {
     client.loop();      // Handles MQTT communication
-    delay(20);          // Wait between iterations
+    delay(10);          // Wait between iterations
   }
-  if (compteur_erreur>=200) {  // If 8 seconds passed
+  if (compteur_erreur>=1000) {  // If 8 seconds passed
     return "e";                // Return default value (error)
   }
 
@@ -138,7 +138,7 @@ bool connect_MQTT() {
     delay(300); 
     Serial.println("Connecting to WiFi.."); 
   } 
-  if (compteur_erreur>=30){
+  if (compteur_erreur>=50){
     Serial.println("Failed to connect to WiFi after multiple attempts"); 
     return true;
   }
@@ -149,7 +149,7 @@ bool connect_MQTT() {
   client.setBufferSize(512);
   client.setCallback(callback); 
   compteur_erreur = 0;
-  while (!client.connected() && compteur_erreur++<10) { 
+  while (!client.connected() && compteur_erreur++<15) { 
     Serial.printf("The client %s connects to the public MQTT broker\n", client_id.c_str()); 
     if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) { 
       Serial.println("Public EMQX MQTT broker connected"); 
