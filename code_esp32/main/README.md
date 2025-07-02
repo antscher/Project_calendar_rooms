@@ -37,8 +37,8 @@ const int mqtt_port = 1883;
 const String client_id = "esp32-client-XXXX"; // Unique client ID
 const char* mqtt_username = "YOUR_MQTT_USERNAME";
 const char* mqtt_password = "YOUR_MQTT_PASSWORD";
-const char* topic = "room/calendar/ROOM_NAME";
-const char* topic_reponse = "room/calendar/ROOM_NAME/response";
+const char* topic = "room/ROOM_NAME";
+const char* topic_reponse = "resp_room/ROOM_NAME";
 
 #endif
 ```
@@ -59,7 +59,19 @@ const char* topic_reponse = "room/calendar/ROOM_NAME/response";
 1. Open the project in Arduino IDE
 2. Select ESP32-S2 Dev kit board
 3. Install required libraries
-4. Compile and upload to ESP32
+4. Compile and upload to ESP32 with parameters of esp 32 as : 
+- USB CDC on boot : "Enabeled"
+- CPU frequency : "160MHz"
+- Core debug "None"
+- Erase all flash : "Enabeled"
+- Flash frequency : "80 MHz"
+- Flash Mode : "QIO"
+- JTAG Adapter : "Disabeled"
+- USB Firmware MSC : "Huge APP (3MB No OTA/1 MB SPIFFS)"
+- PSRAM : "Enabeled"
+- Upload Mode "UART0"
+- Upload Speed : "921600"
+- Zigbee Mode : "Disabeled"
 
 ## Operation Modes
 - **Normal Mode**: Displays room availability and upcoming events
@@ -79,7 +91,7 @@ wYYYY-MM-DDTHH:MM
 ```
 First character indicates mode:
 - 'c': Calendar mode
-- 'w': White screen (night mode)
+- 'w': White screen (or night mode)
 - 'o': On Air mode
 - 'e': Error
 - 'u': Update room name

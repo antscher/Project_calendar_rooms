@@ -36,7 +36,7 @@ void setup() {
     //Nothing to do
     action = 'n';
   }
-
+    delay(500);
   switch (action) {
     case 'c' : { //case of calendar
       DEV_Delay_ms(100);
@@ -81,6 +81,8 @@ void setup() {
       Serial.println("Erreur sur MQTT");
       //We try again to reconnect to the server after 5 min
       time_to_sleep = 5;
+
+      new_day= '2';
       
     break;  }  
 

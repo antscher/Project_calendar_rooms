@@ -98,16 +98,21 @@ bool checkAndUpdateMessage(String message) {
     CalendarEvent calendar1_old(calendar_string_i(old_msg_str,1));
     CalendarEvent calendar2_old(calendar_string_i(old_msg_str,2));
     CalendarEvent calendar3_old(calendar_string_i(old_msg_str,3));
-    if ((calendar1 == calendar1_old) 
+    if (((calendar1 == calendar1_old)  || (!actual_date.eventIsToday(calendar1) && !old_date.eventIsToday(calendar1_old)))
         && (actual_date.eventOnGoing(calendar1) == old_date.eventOnGoing(calendar1_old) )
-        && (calendar3 == calendar3_old )
-        && (calendar2 == calendar2_old)){
+        && ((calendar2 == calendar2_old) || (!actual_date.eventIsToday(calendar2) && !old_date.eventIsToday(calendar2_old)))
+        && ((calendar3 == calendar3_old)  || (!actual_date.eventIsToday(calendar3) && !old_date.eventIsToday(calendar3_old)))
+        ){
       return true;
     }
 
   }
-  else if (message[0] == old_message[0] || message[0]=='e') {
+  else if (message[0] == old_message[0] ) {
     return true;
+  }
+
+  else if (message[0]=='e'){
+    return false;
   }
 
   strncpy(old_message, message.c_str(), sizeof(old_message));
