@@ -47,16 +47,16 @@ The Room Calendar Management System is a modern solution for managing meeting ro
 ### Example Screens and Interfaces
 
 #### Calendar Example
-![Calendar Example](./Calendar%20exemple.png)
+![Calendar Example](./images/Calendar%20exemple.png)
 
 #### Reserved Calendar Example
-![Reserved Calendar Example](./Calendar%20reserved%20example.png)
+![Reserved Calendar Example](./images/Calendar%20reserved%20example.png)
 
 #### On Air Screen
-![On Air Screen](./On%20air%20screen.png)
+![On Air Screen](./images/On%20air%20screen.png)
 
 #### Mosquitto Server Control
-![Mosquitto Server Control](./Mosquitto%20server%20control.png)
+![Mosquitto Server Control](./images/Mosquitto%20server%20control.png)
 
 ## Expected Benefits
 - Improved room utilization
