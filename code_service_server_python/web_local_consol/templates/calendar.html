@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gestion des Calendriers ESP</title>
+    <title>ESP Calendar Management</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Gestion des Identifiants de Calendrier</h1>
+    <h1>Manage Calendar Identifiers</h1>
     {% if message %}
         <p style="color: green;">{{ message }}</p>
     {% endif %}
@@ -18,15 +18,15 @@
                 <span class="esp-id"><strong>{{ esp_id }}</strong></span>
                 <span class="separator">|</span>
 
-                <label>ID Calendrier :</label>
+                <label>Calendar ID:</label>
                 <input type="text" name="calendar_{{ esp_id }}" value="{{ info.get('calendar_id', '') }}" size="50">
             </div>
             {% endfor %}
         </div>
         <br>
-        <button type="submit">Enregistrer</button>
+        <button type="submit">Save</button>
     </form>
     <br>
-    <a href="/">← Retour à l'accueil</a>
+    <a href="/">← Back to Home</a>
 </body>
 </html>

@@ -119,6 +119,6 @@ To maximize battery life and reliability, the ESP32 firmware now uses RTC memory
 
 To reset the battery status after a replacement or maintenance:
 1. Open the Mosquitto MQTT app.
-2. Send the value `2` to the ESP32 device topic.
-3. Press "Update" in the app.
-This will instruct the ESP32 to reset its battery tracking and update its internal state accordingly.
+2. Mode reset battery
+3. Press "Update" in the app and then refresh .
+

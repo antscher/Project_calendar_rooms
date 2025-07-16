@@ -122,14 +122,9 @@ void setup() {
     case 'u' :{ // Update the room name
       Serial.println("Update name");
       std::string temp = calendar_string_i(message, 1);
-      if (temp == "2" ){
-        new_day = '2';
-      }
-      else {
-        size_t len = temp.copy(name_room, sizeof(name_room) - 1);
-        name_room[len] = '\0';  // Ensure string is null-terminated
-        save_name_room_to_flash();
-      }
+      size_t len = temp.copy(name_room, sizeof(name_room) - 1);
+      name_room[len] = '\0';  // Ensure string is null-terminated
+      save_name_room_to_flash();
       time_to_sleep = 1;
 
     break;  }
