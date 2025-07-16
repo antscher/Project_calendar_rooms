@@ -47,6 +47,7 @@ The Room Calendar Management System is a modern solution for managing meeting ro
 - Enhanced user experience
 - Energy-efficient operation
 
+
 ## Project Structure
 ```
 Project_calendar_rooms/

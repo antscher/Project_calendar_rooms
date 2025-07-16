@@ -13,12 +13,12 @@ extern RTC_DATA_ATTR char old_message[400];
 extern const char name_room_const[];
 
 void setup() {
-  delay(500);//for the tension to stabilize
+  delay(500); // Wait for voltage to stabilize
   Serial.begin(115200);
   delay(500); 
   Serial.println("Boot OK");
   check_rtc_data();
-  
+
   if (night_time > 0) {
     Serial.print("Night time : ");
     Serial.println(night_time);
@@ -35,8 +35,8 @@ void setup() {
       night_time = 0;      
     }
 
-    Serial.println("Passage en mode Deep Sleep");
-    //Esp go to deep sleep
+    Serial.println("Entering Deep Sleep mode");
+    // ESP32 goes to deep sleep
     esp_deep_sleep_start();
   }
 
@@ -54,29 +54,29 @@ void setup() {
 
 
   if (actual_date.nightMode()){
-    //mode night
+    // Night mode
     action = 'w';
     message[0] = 'w';
-    night_time= time_to_sleep-15;
+    night_time = time_to_sleep - 15;
     time_to_sleep = 30;
     new_day = '1';
   }
   
 
   else if (checkAndUpdateMessage(message)){
-    //Nothing to do
+    // Nothing to do
     action = 'n';
   }
     delay(500);
   switch (action) {
-    case 'c' : { //case of calendar
+    case 'c' : { // Calendar mode
       nvs_flash_init();
       load_name_room_from_flash();
       DEV_Delay_ms(100);
-      Serial.println("Inititialisation and clear");
+      Serial.println("Initialization and clear");
       init_and_clear();
 
-      Serial.println("affichage du calendrier");
+      Serial.println("Displaying calendar");
 
       CalendarEvent calendar1(calendar_string_i(message,1));
       CalendarEvent calendar2(calendar_string_i(message,2));
@@ -92,8 +92,8 @@ void setup() {
 
     break; }
 
-    case 'w' : { //case of white scree
-      Serial.println("affichage d'un écran blanc");
+    case 'w' : { // White screen mode (night)
+      Serial.println("Displaying white screen");
       DEV_Delay_ms(100);
       init_and_clear();
       display_sleep();
@@ -101,8 +101,8 @@ void setup() {
       
     break; }
 
-    case 'o' : { //case of screen on air
-      Serial.println("affichage d'un écran on air");
+    case 'o' : { // On Air mode
+      Serial.println("Displaying On Air screen");
       DEV_Delay_ms(100);
       init_and_clear();
       display_OnAir();
@@ -110,16 +110,16 @@ void setup() {
       
     break; }
 
-    case 'e' :  { //case of an error with the message
-      Serial.println("Erreur sur MQTT");
-      //We try again to reconnect to the server after 5 min
+    case 'e' :  { // Error with MQTT message
+      Serial.println("MQTT Error");
+      // Try to reconnect to the server after 5 min
       time_to_sleep = 5;
 
-      new_day= '2';
+      new_day = '2';
       
     break;  }  
 
-    case 'u' :{ // Update the name of the Room
+    case 'u' :{ // Update the room name
       Serial.println("Update name");
       std::string temp = calendar_string_i(message, 1);
       if (temp == "2" ){
@@ -127,14 +127,14 @@ void setup() {
       }
       else {
         size_t len = temp.copy(name_room, sizeof(name_room) - 1);
-        name_room[len] = '\0';  // Assure the end of the chain
+        name_room[len] = '\0';  // Ensure string is null-terminated
         save_name_room_to_flash();
       }
       time_to_sleep = 1;
 
     break;  }
 
-    case 'n' :{ //Noting to do case
+    case 'n' :{ // Nothing to do
       Serial.println("Nothing to do");
     break;}
   }
@@ -142,40 +142,39 @@ void setup() {
   Serial.print("Time to sleep ");
   Serial.println(time_to_sleep);
 
-  //L'esp sleep in deep mode (L'esp ne passera jamais dans la boucle loop)
+  // ESP32 sleeps in deep mode (it will never enter the loop function)
   esp_sleep_enable_timer_wakeup(uS_TO_MIN_FACTOR*time_to_sleep);
-  Serial.println("Passage en mode Deep Sleep");
-  
-  //Esp go to deep sleep
+  Serial.println("Entering Deep Sleep mode");
 
+  // ESP32 goes to deep sleep
   esp_deep_sleep_start();
-  Serial.println("Ce message ne s'affichera pas, car l'ESP32 est en Deep Sleep !");
+  Serial.println("This message will not be displayed, because the ESP32 is in Deep Sleep!");
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Main code here, runs repeatedly (not used, ESP32 sleeps)
   delay(5000);
 }
 
 
 void check_rtc_data() {
     Serial.println("Check");
-    // Vérification de new_day
-  if (new_day != '0' && new_day != '1' && new_day != '2') {
-      Serial.println("RTC new_day invalide -> réinitialisation à '2'");
-      new_day = '0';
-  }
+    // Check new_day value
+    if (new_day != '0' && new_day != '1' && new_day != '2') {
+        Serial.println("RTC new_day invalid -> reset to '0'");
+        new_day = '0';
+    }
 
-    // Vérification de night_time (exemple : temps max cohérent)
-    if (night_time > 2880ULL ) {  // 2 jours en minutes, ajustable
-        Serial.println("RTC night_time incohérent -> réinitialisation");
+    // Check night_time (example: max coherent time)
+    if (night_time > 2880ULL ) {  // 2 days in minutes, adjustable
+        Serial.println("RTC night_time incoherent -> reset");
         night_time = 0;
     }
 
-    // Vérification old_message
+    // Check old_message
     if (old_message[0] == '\0') {
-        Serial.println("RTC old_message vide -> initialisation à chaîne vide");
+        Serial.println("RTC old_message empty -> initialize to empty string");
         old_message[0] = '\0';
     }
 }
@@ -187,9 +186,9 @@ void save_name_room_to_flash() {
         nvs_set_str(my_handle, "name_room", name_room);
         nvs_commit(my_handle);
         nvs_close(my_handle);
-        Serial.println("name_room sauvegardé dans la flash");
+        Serial.println("name_room saved to flash");
     } else {
-        Serial.println("Erreur NVS save");
+        Serial.println("NVS save error");
     }
 }
 
@@ -200,14 +199,14 @@ void load_name_room_from_flash() {
         size_t required_size = sizeof(name_room);
         err = nvs_get_str(my_handle, "name_room", name_room, &required_size);
         if (err == ESP_OK) {
-            Serial.print("name_room chargé : ");
+            Serial.print("name_room loaded: ");
             Serial.println(name_room);
         } else {
-            Serial.println("Aucune donnée sauvegardée -> initialisation par défaut");
+            Serial.println("No saved data -> initializing with default");
             strncpy(name_room, name_room_const, sizeof(name_room));
         }
         nvs_close(my_handle);
     } else {
-        Serial.println("Erreur NVS load");
+        Serial.println("NVS load error");
     }
 }

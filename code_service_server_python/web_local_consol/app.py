@@ -134,7 +134,6 @@ def update_esp(esp_id):
 
     if data[esp_id].get("name_room") != name:
         data[esp_id]["name_room"] = name
-        data[esp_id]["screen"] = "update"
     elif data[esp_id].get("screen") != screen:
         data[esp_id]["screen"] = screen
 

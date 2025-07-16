@@ -65,13 +65,7 @@ project/
     └── ...                # Other static files
 
 
-## 🔐 Security
-The app is designed for local network use only.
 
-## 🧑‍💻 Author
-Made with 🧠 by Antscher
-
----
 
 # Web Local Console
 
@@ -115,3 +109,8 @@ The web interface will be available at `http://<FLASK_HOST>:<FLASK_PORT>`
 - ESP device management and status monitoring
 - Calendar configuration and QR code generation
 - Basic authentication for secure access
+
+## 🧑‍💻 Author
+Made with 🧠 by Antscher
+
+---
