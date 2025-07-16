@@ -1,7 +1,8 @@
 #include <calendar.h>
 #include <string>
 #include "interface_graphique.h"
-
+#include "nvs_flash.h"
+#include "nvs.h"
 
 
 #define uS_TO_MIN_FACTOR 60000000ULL
@@ -56,7 +57,6 @@ void setup() {
     //mode night
     action = 'w';
     message[0] = 'w';
-    time_to_sleep = 120;
     night_time= time_to_sleep-15;
     time_to_sleep = 30;
     new_day = '1';
@@ -70,6 +70,8 @@ void setup() {
     delay(500);
   switch (action) {
     case 'c' : { //case of calendar
+      nvs_flash_init();
+      load_name_room_from_flash();
       DEV_Delay_ms(100);
       Serial.println("Inititialisation and clear");
       init_and_clear();
@@ -120,8 +122,14 @@ void setup() {
     case 'u' :{ // Update the name of the Room
       Serial.println("Update name");
       std::string temp = calendar_string_i(message, 1);
-      size_t len = temp.copy(name_room, sizeof(name_room) - 1);
-      name_room[len] = '\0';  // Assure the end of the chain
+      if (temp == "2" ){
+        new_day = '2';
+      }
+      else {
+        size_t len = temp.copy(name_room, sizeof(name_room) - 1);
+        name_room[len] = '\0';  // Assure the end of the chain
+        save_name_room_to_flash();
+      }
       time_to_sleep = 1;
 
     break;  }
@@ -153,16 +161,10 @@ void loop() {
 
 void check_rtc_data() {
     Serial.println("Check");
-    // Vérification de name_room
-  if (name_room[0] == '\0') {
-      Serial.println("RTC name_room vide -> initialisation par défaut");
-      strncpy(name_room, name_room_const, sizeof(name_room));
-  }
-
     // Vérification de new_day
   if (new_day != '0' && new_day != '1' && new_day != '2') {
       Serial.println("RTC new_day invalide -> réinitialisation à '2'");
-      new_day = '2';
+      new_day = '0';
   }
 
     // Vérification de night_time (exemple : temps max cohérent)
@@ -175,5 +177,37 @@ void check_rtc_data() {
     if (old_message[0] == '\0') {
         Serial.println("RTC old_message vide -> initialisation à chaîne vide");
         old_message[0] = '\0';
+    }
+}
+
+void save_name_room_to_flash() {
+    nvs_handle_t my_handle;
+    esp_err_t err = nvs_open("storage", NVS_READWRITE, &my_handle);
+    if (err == ESP_OK) {
+        nvs_set_str(my_handle, "name_room", name_room);
+        nvs_commit(my_handle);
+        nvs_close(my_handle);
+        Serial.println("name_room sauvegardé dans la flash");
+    } else {
+        Serial.println("Erreur NVS save");
+    }
+}
+
+void load_name_room_from_flash() {
+    nvs_handle_t my_handle;
+    esp_err_t err = nvs_open("storage", NVS_READONLY, &my_handle);
+    if (err == ESP_OK) {
+        size_t required_size = sizeof(name_room);
+        err = nvs_get_str(my_handle, "name_room", name_room, &required_size);
+        if (err == ESP_OK) {
+            Serial.print("name_room chargé : ");
+            Serial.println(name_room);
+        } else {
+            Serial.println("Aucune donnée sauvegardée -> initialisation par défaut");
+            strncpy(name_room, name_room_const, sizeof(name_room));
+        }
+        nvs_close(my_handle);
+    } else {
+        Serial.println("Erreur NVS load");
     }
 }
