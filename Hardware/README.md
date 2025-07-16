@@ -64,4 +64,4 @@ Use M3 screws to attach it
 
 The cadre is made with inskape, it is a .svg
 It is desin for wood of 3mm
-It need to be cut (red lines) and engrave (blue lines)
+It need to be cut (red lines) and engrave (blue surface)

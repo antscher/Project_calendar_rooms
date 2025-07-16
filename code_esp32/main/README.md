@@ -49,11 +49,11 @@ const char* topic_reponse = "resp_room/ROOM_NAME";
 - See Hardware/README.md for detailed specifications
 
 ### 3. Software Dependencies
-- Arduino IDE with ESP32 board support (ESP32 S2 Dev kit)
+- Arduino IDE with ESP32 board support (ESP32 S2 Dev kit) (tested v3.2.0)
 - Required Libraries:
-  - PubSubClient (v2.8+)
-  - WiFi
-  - SPI
+  - PubSubClient (tested v2.8)
+  - WiFi (built in)
+  - SPI (built in)
 
 ### 4. Building and Flashing
 1. Open the project in Arduino IDE

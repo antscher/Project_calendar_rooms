@@ -2,18 +2,44 @@
 #include <string>
 #include "interface_graphique.h"
 
-#define uS_TO_MIN_FACTOR 1000000 * 60
-RTC_DATA_ATTR  char new_day= '2';
+
+
+#define uS_TO_MIN_FACTOR 60000000ULL
+RTC_DATA_ATTR char new_day;
+RTC_DATA_ATTR unsigned long long int night_time;
+extern RTC_DATA_ATTR char name_room[64];
+extern RTC_DATA_ATTR char old_message[400];
+extern const char name_room_const[];
 
 void setup() {
-  delay(500);
+  delay(500);//for the tension to stabilize
   Serial.begin(115200);
-  //for the tension to stabilize
+  delay(500); 
+  Serial.println("Boot OK");
+  check_rtc_data();
+  
+  if (night_time > 0) {
+    Serial.print("Night time : ");
+    Serial.println(night_time);
+    if (new_day != '0'){
+      new_day = '0';
+    }
+    if (night_time > 30) {
+      night_time -= 30;
+      Serial.println(night_time);
+      esp_sleep_enable_timer_wakeup(uS_TO_MIN_FACTOR*30);
+    }
+    else {
+      esp_sleep_enable_timer_wakeup(uS_TO_MIN_FACTOR*night_time);
+      night_time = 0;      
+    }
+
+    Serial.println("Passage en mode Deep Sleep");
+    //Esp go to deep sleep
+    esp_deep_sleep_start();
+  }
 
   String message =  mqtt_calendar(new_day); 
-  if (new_day != '0'){
-      new_day = '0';
-  } 
 
   char action = message[0];
   Now actual_date(calendar_string_i(message,0));
@@ -29,8 +55,13 @@ void setup() {
   if (actual_date.nightMode()){
     //mode night
     action = 'w';
+    message[0] = 'w';
+    time_to_sleep = 120;
+    night_time= time_to_sleep-15;
+    time_to_sleep = 30;
     new_day = '1';
   }
+  
 
   else if (checkAndUpdateMessage(message)){
     //Nothing to do
@@ -108,7 +139,7 @@ void setup() {
   Serial.println("Passage en mode Deep Sleep");
   
   //Esp go to deep sleep
-  delay(500);
+
   esp_deep_sleep_start();
   Serial.println("Ce message ne s'affichera pas, car l'ESP32 est en Deep Sleep !");
 
@@ -117,4 +148,32 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   delay(5000);
+}
+
+
+void check_rtc_data() {
+    Serial.println("Check");
+    // Vérification de name_room
+  if (name_room[0] == '\0') {
+      Serial.println("RTC name_room vide -> initialisation par défaut");
+      strncpy(name_room, name_room_const, sizeof(name_room));
+  }
+
+    // Vérification de new_day
+  if (new_day != '0' && new_day != '1' && new_day != '2') {
+      Serial.println("RTC new_day invalide -> réinitialisation à '2'");
+      new_day = '2';
+  }
+
+    // Vérification de night_time (exemple : temps max cohérent)
+    if (night_time > 2880ULL ) {  // 2 jours en minutes, ajustable
+        Serial.println("RTC night_time incohérent -> réinitialisation");
+        night_time = 0;
+    }
+
+    // Vérification old_message
+    if (old_message[0] == '\0') {
+        Serial.println("RTC old_message vide -> initialisation à chaîne vide");
+        old_message[0] = '\0';
+    }
 }

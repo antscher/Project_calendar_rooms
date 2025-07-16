@@ -9,11 +9,11 @@
 #define nb_events 5  // Define the number of events
 
 //Time between each refresh
-#define TIME_BEFORE_REFRESH  1  // Time interval in minutes before refresh
+#define TIME_BEFORE_REFRESH  5  // Time interval in minutes before refresh
 
 //hours for the sleeping, the night 
-#define beginning_night_hour 20  // The start hour of the night
-#define beginning_night_minutes 0  // The start minute of the night
+#define beginning_night_hour 16  // The start hour of the night
+#define beginning_night_minutes 30  // The start minute of the night
 
 //hours for the waking up after the night sleeping
 #define ending_night_hour 7  // The wake-up hour after the night

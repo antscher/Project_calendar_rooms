@@ -14,7 +14,7 @@ We defined our fonctions to use and import files for doing the printing on the d
 #include <stdlib.h> // malloc() free()
 #include "calendar.h"
 
-extern  char name_room[64];
+extern RTC_DATA_ATTR char name_room[64];
 
 //Space for characters in a normal style (Fonts 28)
 #define charact_height 28

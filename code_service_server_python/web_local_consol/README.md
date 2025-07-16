@@ -48,12 +48,21 @@ http://localhost:5000
 
 project/
 │
-├── app.py                 # Main Flask app
-├── esp_data.json          # JSON database of all ESP screen data
-├── qr_code_generator      # Generate QR code for esp with URls
-├── templates/             # HTML templates
-├── tmp/                   # Where C++ files are stored
-└── static/                # javascript and CSS 
+├── app.py                 # Main Flask app, entry point for the web server
+├── esp_data.json          # JSON database of all ESP screen data and configuration
+├── qr_code_generator/     # Python scripts for generating QR codes for ESP devices
+│   ├── generate_qr.py     # Main QR code generation script
+│   └── ...                # Other helper scripts
+├── templates/             # HTML templates for Flask (Jinja2)
+│   ├── index.html         # Main dashboard page
+│   ├── room_config.html   # Room configuration page
+│   └── ...                # Other template files
+├── tmp/                   # Temporary storage for generated C++ files and QR images
+│   └── ...                # Files created during runtime
+└── static/                # Static assets (JavaScript, CSS, images)
+    ├── style.css          # Main stylesheet
+    ├── script.js          # Main JavaScript file
+    └── ...                # Other static files
 
 
 ## 🔐 Security

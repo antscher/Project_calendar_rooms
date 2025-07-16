@@ -7,7 +7,7 @@ WiFiClient espClient; // WiFi client
 PubSubClient client(espClient); // MQTT client
 
 String message = ""; // Message received via MQTT
-RTC_DATA_ATTR char old_message[400] = ""; 
+RTC_DATA_ATTR char old_message[400];
 
 
 /******************************************************************************

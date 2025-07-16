@@ -1,7 +1,7 @@
 #include "interface_graphique.h"
 #include "src/e-Paper/EPD_7in3e.h"
 
-RTC_DATA_ATTR char name_room[64] = "Room1 - Max capacity : 25";
+RTC_DATA_ATTR char name_room[64];
 
 // Declare a pointer for the image to be displayed
 UBYTE *BlackImage;
