@@ -114,8 +114,6 @@ void setup() {
       Serial.println("MQTT Error");
       // Try to reconnect to the server after 5 min
       time_to_sleep = 5;
-
-      new_day = '2';
       
     break;  }  
 

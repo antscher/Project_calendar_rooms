@@ -34,12 +34,29 @@ The Room Calendar Management System is a modern solution for managing meeting ro
    - Web dashboard for administrators
    - Display interface for e-ink screens
 
+
 ## Key Features
 - Real-time room availability display
 - Direct booking from room displays
 - Low-power operation with years of battery life
 - Calendar synchronization
 - Administrative dashboard
+
+## System Illustrations
+
+### Example Screens and Interfaces
+
+#### Calendar Example
+![Calendar Example](./Calendar%20exemple.png)
+
+#### Reserved Calendar Example
+![Reserved Calendar Example](./Calendar%20reserved%20example.png)
+
+#### On Air Screen
+![On Air Screen](./On%20air%20screen.png)
+
+#### Mosquitto Server Control
+![Mosquitto Server Control](./Mosquitto%20server%20control.png)
 
 ## Expected Benefits
 - Improved room utilization
