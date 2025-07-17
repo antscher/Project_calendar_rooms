@@ -56,7 +56,7 @@ The Room Calendar Management System is a modern solution for managing meeting ro
 ![On Air Screen](./images/On%20air%20screen.png)
 
 #### Mosquitto Server Control
-![Mosquitto Server Control](./images/Mosquitto%20server%20control.png)
+![Mosquitto Server Control](./images/Mosquitto%20server%20control1.png)
 
 ## Expected Benefits
 - Improved room utilization

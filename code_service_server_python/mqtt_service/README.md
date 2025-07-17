@@ -74,6 +74,10 @@ mqtt_service/
 ├── token.json           # OAuth2 tokens
 └── .env                 # Environment configuration
 
+## Stockage of data
+
+Every data are stocked on the "esp-data.json". If you want you can manually change the data or the mode by modifying it. I you want to delete a screen you need to remove the line that correspond  directly on the file
+
 ## 🔐 Security
 - Secure MQTT credentials
 - OAuth2 authentication for Google Calendar
