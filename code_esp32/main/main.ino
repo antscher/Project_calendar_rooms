@@ -1,7 +1,6 @@
 #include <calendar.h>
 #include "interface_graphique.h"
 #include "optimization_config.h"
-#include "memory_diagnostic.h"
 #include "nvs_flash.h"
 #include "nvs.h"
 
@@ -18,11 +17,6 @@ void setup() {
   Serial.begin(115200);
   delay(500); 
   Serial.println("Boot OK");
-  
-  // Memory diagnostic at startup
-  MEM_CHECK("Setup start");
-  MemoryDiagnostic::printDetailedMemory();
-  
   check_rtc_data();
 
   if (night_time > 0) {
@@ -47,7 +41,6 @@ void setup() {
   }
 
   String message =  mqtt_calendar(new_day); 
-  MEM_CHECK("After MQTT");
 
   char action = message[0];
   char date_buffer[64];
@@ -62,8 +55,6 @@ void setup() {
     //definition of time to sleep, depend if there is an event soon
     time_to_sleep = actual_date.timeToSleep(calendar1);
   }
-  
-  MEM_CHECK("After parsing");
 
 
   if (actual_date.nightMode()){
