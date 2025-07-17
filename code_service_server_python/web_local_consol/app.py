@@ -75,6 +75,22 @@ def require_auth():
         return authenticate()
 
 #******************************************************************************
+# function:    sort_devices
+# parameter:
+#    devices : Dictionary of device data
+# return:
+#    dict : Sorted dictionary of device data by name
+#******************************************************************************
+def sort_devices(devices):
+    # Convert to list of tuples and sort by name_room
+    sorted_items = sorted(
+        devices.items(),
+        key=lambda x: x[1].get('name_room', '').lower()
+    )
+    # Convert back to dictionary while preserving order (Python 3.7+)
+    return dict(sorted_items)
+
+#******************************************************************************
 # function:    index
 # parameter:
 #    None
@@ -85,7 +101,8 @@ def require_auth():
 def index():
     check_needs_replacement()
     estimated_duration = 730
-    return render_template('index.html', devices=load_data(), estimated_duration=estimated_duration)
+    devices = sort_devices(load_data())
+    return render_template('index.html', devices=devices, estimated_duration=estimated_duration)
 
 
 #******************************************************************************
@@ -160,9 +177,11 @@ def calendar():
             if new_value:
                 data[esp_id]["calendar_id"] = new_value
         save_data(data)
-        return render_template('calendar.html', devices=data, message="Mise à jour réussie.")
+        sorted_data = sort_devices(data)
+        return render_template('calendar.html', devices=sorted_data, message="Mise à jour réussie.")
 
-    return render_template('calendar.html', devices=data)
+    sorted_data = sort_devices(data)
+    return render_template('calendar.html', devices=sorted_data)
 
 #******************************************************************************
 # function:    calendar_qr

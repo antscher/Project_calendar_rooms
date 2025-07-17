@@ -6,55 +6,83 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Calendar Display Manager</h1>
-    <br>
-    <div id="esp-list">
-        {% for esp_id, info in devices.items() %}
-        <div class="esp-block">
-            <span class="esp-id"><strong>{{ esp_id }}</strong></span>
-            <span class="separator">|</span>
+    <div class="container">
+        <h1>Calendar Display Manager</h1>
+        
+        <nav class="main-nav">
+            <a href="/calendar" class="nav-link">
+                <span class="nav-icon">📅</span>
+                Calendar Selection
+            </a>
+            <a href="/qr_code" class="nav-link">
+                <span class="nav-icon">🔲</span>
+                QR Code Generator
+            </a>
+        </nav>
 
-            <label>Name:</label>
-            <input type="text" id="name-{{ esp_id }}" value="{{ info.name_room }}">
-            <span class="separator">|</span>
-
-            <label>Battery:</label>
-                {% set percent = (100 * info.battery / estimated_duration) %}
-                {% if info.needs_replacement %}
-                <span style="color: red; font-weight: bold;">Battery needs replacement</span>
-                {% else %}
-                <span>{{ (100 - percent)|int }}%</span>
-                <div class="battery-bar">
-                        <div class="battery-fill"
-                        style="width: {{ [0, 100 - percent]|max|round(0) }}%;
-                        background-color: {{ '#4CAF50' if percent <= 90 else '#FFC107' if percent <= 95 else '#F44336' }};">
-                         </div>
+        <div id="esp-list">
+            {% for esp_id, info in devices.items() %}
+            <div class="esp-block">
+                <div class="esp-header">
+                    <span class="esp-id"><strong>{{ esp_id }}</strong></span>
                 </div>
-                {% endif %}
-            <span class="separator">|</span>
 
-            <label>Last update:</label>
-            <span>{{ info.last_update }}</span>
-            <span class="separator">|</span>
+                <div class="esp-content">
+                    <div class="esp-field">
+                        <label>Name:</label>
+                        <input type="text" id="name-{{ esp_id }}" 
+                               value="{{ info.name_room }}"
+                               placeholder="Enter device name">
+                    </div>
 
-            <label>Mode:</label>
-            <select id="screen-{{ esp_id }}">
-                <option value="calendar" {% if info.screen == "calendar" %}selected{% endif %}>Calendar</option>
-                <option value="whiteboard" {% if info.screen == "whiteboard" %}selected{% endif %}>Whiteboard</option>
-                <option value="update" {% if info.screen == "update" %}selected{% endif %}>Update</option>
-                <option value="on air" {% if info.screen == "on air" %}selected{% endif %}>On Air</option>
-                <option value="reset_battery" {% if info.screen == "reset_battery" %}selected{% endif %}>Reset Battery</option>
-            </select>
-            <span class="separator">|</span>
+                    <div class="esp-field">
+                        <label>Battery:</label>
+                        <div class="battery-status">
+                            {% set percent = (100 * info.battery / estimated_duration) %}
+                            {% if info.needs_replacement %}
+                            <div class="battery-warning">
+                                <span class="warning-icon">⚠️</span>
+                                Battery needs replacement
+                            </div>
+                            {% else %}
+                            <span class="battery-percent">{{ (100 - percent)|int }}%</span>
+                            <div class="battery-bar">
+                                <div class="battery-fill"
+                                     style="width: {{ [0, 100 - percent]|max|round(0) }}%;
+                                     background-color: {{ '#4CAF50' if percent <= 90 else '#FFC107' if percent <= 95 else '#F44336' }};">
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
 
-            <button onclick="saveESP('{{ esp_id }}')">Save</button>
+                    <div class="esp-field">
+                        <label>Last update:</label>
+                        <span class="update-time">{{ info.last_update }}</span>
+                    </div>
+
+                    <div class="esp-field">
+                        <label>Mode:</label>
+                        <select id="screen-{{ esp_id }}" class="mode-select">
+                            <option value="calendar" {% if info.screen == "calendar" %}selected{% endif %}>📅 Calendar</option>
+                            <option value="whiteboard" {% if info.screen == "whiteboard" %}selected{% endif %}>📝 Whiteboard</option>
+                            <option value="update" {% if info.screen == "update" %}selected{% endif %}>🔄 Update</option>
+                            <option value="on air" {% if info.screen == "on air" %}selected{% endif %}>🎥 On Air</option>
+                            <option value="reset_battery" {% if info.screen == "reset_battery" %}selected{% endif %}>🔋 Reset Battery</option>
+                        </select>
+                    </div>
+
+                    <div class="esp-actions">
+                        <button onclick="saveESP('{{ esp_id }}')" class="save-button">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
+
     <script src="/static/script.js"></script>
-    <br>
-    <a href="/calendar">Calendar Selection</a>
-    <br>
-    <a href="/qr_code">QR Code Generator (C++ format)</a>
 </body>
 </html>

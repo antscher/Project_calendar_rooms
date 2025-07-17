@@ -79,6 +79,7 @@ pip install flask python-dotenv
 ```
 
 2. Create a `.env` file in the project root with the following variables:
+If it don't works, just rename the variable in the script "app.py"
 ```
 USERNAME=your_username
 PASSWORD=your_password

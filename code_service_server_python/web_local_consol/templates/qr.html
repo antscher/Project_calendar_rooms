@@ -8,11 +8,19 @@
 <body>
     <h1>QR Code Generator for Calendar</h1>
     <form method="POST">
-        <label for="calendar_url">Calendar URL:</label><br>
-        <input type="text" name="calendar_url" id="calendar_url" style="width: 60%;" required><br><br>
-        <button type="submit">Generate C++ file</button>
+        <div class="form-group">
+            <label for="calendar_url">Calendar URL:</label>
+            <input type="text" 
+                   name="calendar_url" 
+                   id="calendar_url" 
+                   required 
+                   placeholder="Enter your Google Calendar URL">
+        </div>
+        <div style="text-align: center;">
+            <button type="submit">Generate C++ File</button>
+        </div>
     </form>
-    <br>
-    <a href="/">← Back to Home</a>
+    
+    <a href="/" class="back-link">← Back to Home</a>
 </body>
 </html>

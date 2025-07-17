@@ -8,9 +8,9 @@
 <body>
     <h1>Manage Calendar Identifiers</h1>
     {% if message %}
-        <p style="color: green;">{{ message }}</p>
+        <div class="message-success">{{ message }}</div>
     {% endif %}
-    <br>
+    
     <form method="POST" id="calendar-form">
         <div id="calendar-list">
             {% for esp_id, info in devices.items() %}
@@ -19,14 +19,17 @@
                 <span class="separator">|</span>
 
                 <label>Calendar ID:</label>
-                <input type="text" name="calendar_{{ esp_id }}" value="{{ info.get('calendar_id', '') }}" size="50">
+                <input type="text" name="calendar_{{ esp_id }}" 
+                       value="{{ info.get('calendar_id', '') }}" 
+                       placeholder="Enter Google Calendar ID">
             </div>
             {% endfor %}
         </div>
-        <br>
-        <button type="submit">Save</button>
+        <div style="text-align: center; margin-top: 30px;">
+            <button type="submit">Save Changes</button>
+        </div>
     </form>
-    <br>
-    <a href="/">← Back to Home</a>
+    
+    <a href="/" class="back-link">← Back to Home</a>
 </body>
 </html>
