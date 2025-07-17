@@ -1,6 +1,7 @@
 #include <calendar.h>
-#include <string>
 #include "interface_graphique.h"
+#include "optimization_config.h"
+#include "memory_diagnostic.h"
 #include "nvs_flash.h"
 #include "nvs.h"
 
@@ -17,6 +18,11 @@ void setup() {
   Serial.begin(115200);
   delay(500); 
   Serial.println("Boot OK");
+  
+  // Memory diagnostic at startup
+  MEM_CHECK("Setup start");
+  MemoryDiagnostic::printDetailedMemory();
+  
   check_rtc_data();
 
   if (night_time > 0) {
@@ -41,16 +47,23 @@ void setup() {
   }
 
   String message =  mqtt_calendar(new_day); 
+  MEM_CHECK("After MQTT");
 
   char action = message[0];
-  Now actual_date(calendar_string_i(message,0));
+  char date_buffer[64];
+  calendar_string_i(message, 0, date_buffer, sizeof(date_buffer));
+  Now actual_date(date_buffer);
   int time_to_sleep = actual_date.timeToSleep();
 
   if (action == 'c'){
-    CalendarEvent calendar1(calendar_string_i(message,1));
+    char event_buffer[256];
+    calendar_string_i(message, 1, event_buffer, sizeof(event_buffer));
+    CalendarEvent calendar1(event_buffer);
     //definition of time to sleep, depend if there is an event soon
     time_to_sleep = actual_date.timeToSleep(calendar1);
   }
+  
+  MEM_CHECK("After parsing");
 
 
   if (actual_date.nightMode()){
@@ -78,11 +91,18 @@ void setup() {
 
       Serial.println("Displaying calendar");
 
-      CalendarEvent calendar1(calendar_string_i(message,1));
-      CalendarEvent calendar2(calendar_string_i(message,2));
-      CalendarEvent calendar3(calendar_string_i(message,3));
-      CalendarEvent calendar4(calendar_string_i(message,4));
-      CalendarEvent calendar5(calendar_string_i(message,5));
+      char event_buffer1[256], event_buffer2[256], event_buffer3[256], event_buffer4[256], event_buffer5[256];
+      calendar_string_i(message, 1, event_buffer1, sizeof(event_buffer1));
+      calendar_string_i(message, 2, event_buffer2, sizeof(event_buffer2));
+      calendar_string_i(message, 3, event_buffer3, sizeof(event_buffer3));
+      calendar_string_i(message, 4, event_buffer4, sizeof(event_buffer4));
+      calendar_string_i(message, 5, event_buffer5, sizeof(event_buffer5));
+
+      CalendarEvent calendar1(event_buffer1);
+      CalendarEvent calendar2(event_buffer2);
+      CalendarEvent calendar3(event_buffer3);
+      CalendarEvent calendar4(event_buffer4);
+      CalendarEvent calendar5(event_buffer5);
 
       display_calendar(actual_date,calendar1,calendar2,calendar3,calendar4,calendar5);
 
@@ -119,9 +139,10 @@ void setup() {
 
     case 'u' :{ // Update the room name
       Serial.println("Update name");
-      std::string temp = calendar_string_i(message, 1);
-      size_t len = temp.copy(name_room, sizeof(name_room) - 1);
-      name_room[len] = '\0';  // Ensure string is null-terminated
+      char name_buffer[64];
+      calendar_string_i(message, 1, name_buffer, sizeof(name_buffer));
+      strncpy(name_room, name_buffer, sizeof(name_room) - 1);
+      name_room[sizeof(name_room) - 1] = '\0';  // Ensure string is null-terminated
       save_name_room_to_flash();
       time_to_sleep = 1;
 

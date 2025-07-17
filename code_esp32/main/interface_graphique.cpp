@@ -65,13 +65,15 @@ int display_calendar(Now actual_date, CalendarEvent calendar1, CalendarEvent cal
     // Calculate the required memory size for the image
     UDOUBLE ImagesizeTitle = ((EPD_7IN3E_HEIGHT % 2 == 0) ? (EPD_7IN3E_HEIGHT / 2) : (EPD_7IN3E_HEIGHT / 2 + 1)) * EPD_7IN3E_WIDTH;
 
-    // Use SPRAM for memory allocation
-    static UBYTE *BlackImage IRAM_ATTR;
-
-    // Allocate memory
-    if ((BlackImage = (UBYTE *)malloc(ImagesizeTitle)) == NULL) {
-        Debug("Failed to apply for black memory...\r\n");
-        return -1;
+    // Use PSRAM if available, otherwise regular memory
+    UBYTE *BlackImage = (UBYTE *)ps_malloc(ImagesizeTitle);
+    if (BlackImage == NULL) {
+        // Fallback to regular malloc if PSRAM fails
+        BlackImage = (UBYTE *)malloc(ImagesizeTitle);
+        if (BlackImage == NULL) {
+            Debug("Failed to apply for black memory...\r\n");
+            return -1;
+        }
     }
 
     // Initialize the image and drawing context
@@ -235,7 +237,7 @@ UWORD diplay_event_info(Now actual_date,CalendarEvent calendar, UWORD Ystart){
     }
     Paint_DrawString_EN(10, Ystart, date_info, &Font28_b, EPD_7IN3E_WHITE, EPD_7IN3E_BLACK);
 
-    const char * desc = calendar.getDescription().c_str();
+    const char * desc = calendar.getDescription();
     int line = Paint_DrawLongString(10, Ystart+charact_height, desc, &Font28, EPD_7IN3E_WHITE, EPD_7IN3E_BLACK);
     Paint_DrawLine(0, Ystart+(1+line)*charact_height+5, 680, Ystart+(1+line)*charact_height+5, EPD_7IN3E_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
 
