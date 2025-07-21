@@ -1,6 +1,7 @@
 # Hardware Components Selection
 
-## ESP32-S2 Microcontroller : ESP32-S2 Dev kit from waveshare
+## ESP32-S2 Microcontroller : ESP32-S2 pico from waveshare
+Here the link : https://www.waveshare.com/esp32-s2.htm
 - **Why this choice?**
   - Built-in WiFi capabilities for network connectivity
   - Low power consumption with deep sleep modes
@@ -12,6 +13,7 @@
   Can be power supply between 10V and 1.8V theorically in reality it is needed to be superior to 2.65V
 
 ## Waveshare E-Ink Display : Spectra 7.3" from Waveshare
+Here the link : https://www.waveshare.com/7.3inch-e-paper-hat-e.htm 
 - **Why this choice?**
   - Ultra-low power consumption - only uses power when refreshing
   - Excellent readability in various lighting conditions
@@ -20,6 +22,7 @@
   - 6 colors 
 
 ## Battery Selection : Roomz display battery
+Here the link : https://www.bechtle.com/fr-en/shop/roomz-display-spare-batteries--4329865--p
 - **Why not rechargeable Li-primary**
   - High energy density
   - Low self-discharge rate
@@ -53,7 +56,9 @@
 ## The PCB 
 
 The pcb is made on Kicad
-So you need it to open it (it is quite a simple design)
+You can open it and modify it with Kicad, may be you will need to downloads some library for footprints
+You can purshase it, but you have to first expot in gerber file.
+All of the componnent required are in the "Component list.xlsx", you can change some component by similar ones but make sure the footprint is compatible (or modify it).
 
 ## The support of the cadre 
 
@@ -65,3 +70,5 @@ Use M3 screws to attach it
 The cadre is made with inskape, it is a .svg
 It is desin for wood of 3mm
 It need to be cut (red lines) and engrave (blue surface)
+You need to glue it exepct te back that just fit in, so you can remove it after
+For the screen, scotch it or glue it
