@@ -1308,6 +1308,374 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:L"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L"
+				(at -1.27 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "L"
+				(at 1.905 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Inductor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "inductor choke coil reactor magnetic"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "L_0_1"
+				(arc
+					(start 0 2.54)
+					(mid 0.6323 1.905)
+					(end 0 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 1.27)
+					(mid 0.6323 0.635)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0)
+					(mid 0.6323 -0.635)
+					(end 0 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -1.27)
+					(mid 0.6323 -1.905)
+					(end 0 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "L_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "MAX1724EZK50+T:MAX1724EZK50+T"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "IC"
+				(at 24.13 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "MAX1724EZK50+T"
+				(at 24.13 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "SOT95P275X110-5N"
+				(at 24.13 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/max1722-max1724.pdf"
+				(at 24.13 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "1.5A IQ, Step-Up DC-DC Converters  in Thin SOT23-5"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "1.1"
+				(at 24.13 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "700-MAX1724EZK50T"
+				(at 24.13 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Analog-Devices-Maxim-Integrated/MAX1724EZK50%2bT?qs=1THa7WoU59EvvG1ye0TdGQ%3D%3D"
+				(at 24.13 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Analog Devices"
+				(at 24.13 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "MAX1724EZK50+T"
+				(at 24.13 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "MAX1724EZK50+T_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 22.86 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "BATT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "~{SHDN}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 27.94 0 180)
+					(length 5.08)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 27.94 -2.54 180)
+					(length 5.08)
+					(name "LX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "SLW-864574-5A-RA-N-D:SLW-864574-5A-RA-N-D"
 			(pin_names
 				(offset 1.016)
@@ -1900,7 +2268,7 @@
 	)
 	(text "System to power the ESP32 "
 		(exclude_from_sim no)
-		(at 208.28 46.736 0)
+		(at 170.18 28.448 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1929,16 +2297,34 @@
 		(uuid "61436dc7-ca3b-4147-aa7d-bec22a444a06")
 	)
 	(junction
-		(at 227.33 59.69)
+		(at 193.04 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b74ac957-a1a1-43e9-94ff-48b93fddc00d")
+		(uuid "15fe2d85-f178-4b88-b09b-905a6eaf8e48")
 	)
 	(junction
-		(at 227.33 40.64)
+		(at 209.55 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c39215a0-fde4-4d93-b60d-fccd74eb5f6d")
+		(uuid "35631fba-07f0-4941-b553-366bd37a12ee")
+	)
+	(junction
+		(at 209.55 45.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5792d4de-0276-4c74-b517-b77f8ed4619b")
+	)
+	(junction
+		(at 203.2 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b0fc55ac-e0e5-4249-a093-06e2f918c4df")
+	)
+	(junction
+		(at 138.43 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fe197750-60db-4f39-b8aa-6e50e86d883c")
 	)
 	(no_connect
 		(at 106.68 125.73)
@@ -2005,7 +2391,7 @@
 		(uuid "7290bfbd-6c81-4621-8e82-ee0efa6b9499")
 	)
 	(no_connect
-		(at 201.93 43.18)
+		(at 218.44 33.02)
 		(uuid "782f70da-d89c-48a7-876e-f3cf41a230b8")
 	)
 	(no_connect
@@ -2074,17 +2460,47 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 59.69) (xy 227.33 59.69)
+			(xy 138.43 62.23) (xy 148.59 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2147b84b-1d0c-42b1-9f75-eeea2beda7f4")
+		(uuid "17174547-d73a-4a37-8da7-30f21127c8ef")
 	)
 	(wire
 		(pts
-			(xy 227.33 53.34) (xy 227.33 59.69)
+			(xy 209.55 45.72) (xy 193.04 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bbce411-2337-46b6-9c66-4ed2df67e28f")
+	)
+	(wire
+		(pts
+			(xy 193.04 52.07) (xy 193.04 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22405007-18cd-4788-9dfa-f57b0617f5ad")
+	)
+	(wire
+		(pts
+			(xy 250.19 26.67) (xy 250.19 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23078728-8f28-4405-b9cb-347dd52a5128")
+	)
+	(wire
+		(pts
+			(xy 138.43 55.88) (xy 138.43 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2094,47 +2510,57 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 59.69) (xy 214.63 59.69)
+			(xy 233.68 35.56) (xy 237.49 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "306c96c4-f61a-497e-a650-16b466cc99eb")
+		(uuid "3d4d8a38-03c4-4b1a-a6c6-4fbf82194a4c")
 	)
 	(wire
 		(pts
-			(xy 227.33 40.64) (xy 237.49 40.64)
+			(xy 137.16 41.91) (xy 138.43 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3f16192e-34c8-4761-a516-e1306c6b2e8d")
+		(uuid "56414bba-f527-410d-932e-7645d4254336")
 	)
 	(wire
 		(pts
-			(xy 237.49 43.18) (xy 237.49 59.69)
+			(xy 148.59 43.18) (xy 165.1 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4332483b-b4bf-49fb-a7f3-000dd6c152f7")
+		(uuid "5d70f137-f337-4e9e-8121-9e46df146f50")
 	)
 	(wire
 		(pts
-			(xy 198.12 38.1) (xy 201.93 38.1)
+			(xy 237.49 40.64) (xy 237.49 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "70026e05-b802-4e45-aaa2-ac3634632f67")
+		(uuid "61553274-e57c-4c2e-8309-85a24214aa1c")
 	)
 	(wire
 		(pts
-			(xy 227.33 40.64) (xy 227.33 45.72)
+			(xy 198.12 43.18) (xy 198.12 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "618f27e7-7b16-4797-b41e-53f9563fe27c")
+	)
+	(wire
+		(pts
+			(xy 138.43 41.91) (xy 138.43 48.26)
 		)
 		(stroke
 			(width 0)
@@ -2144,13 +2570,163 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 40.64) (xy 227.33 40.64)
+			(xy 198.12 38.1) (xy 203.2 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "94afcd0d-0fca-4533-9a6d-038fcae82cd5")
+		(uuid "77091d81-c904-4b73-ab23-49e8e163dabc")
+	)
+	(wire
+		(pts
+			(xy 137.16 62.23) (xy 138.43 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79bc917f-e0cf-4b43-a6b8-59f1eeab66ca")
+	)
+	(wire
+		(pts
+			(xy 209.55 38.1) (xy 218.44 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8019b4f5-f3d3-4468-af5b-f2a7e18d3ad9")
+	)
+	(wire
+		(pts
+			(xy 203.2 38.1) (xy 209.55 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82b84db3-fd9e-48c9-bd12-b78d62e0dd14")
+	)
+	(wire
+		(pts
+			(xy 226.06 43.18) (xy 237.49 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "918aebd8-415a-4cd4-8880-008c3681f63d")
+	)
+	(wire
+		(pts
+			(xy 226.06 43.18) (xy 226.06 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "963f6c27-2d74-42c9-a7b6-5ab25845c7c1")
+	)
+	(wire
+		(pts
+			(xy 203.2 26.67) (xy 203.2 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a586f21e-d9d2-4659-b126-1baa3fab42ff")
+	)
+	(wire
+		(pts
+			(xy 193.04 52.07) (xy 193.04 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a66a9c74-e1d7-499a-b040-48700effa793")
+	)
+	(wire
+		(pts
+			(xy 173.99 58.42) (xy 165.1 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af04feac-023d-4296-b9d5-cdc254a024f4")
+	)
+	(wire
+		(pts
+			(xy 165.1 58.42) (xy 165.1 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af93ad7b-bf6f-4b90-8c62-9a5296907702")
+	)
+	(wire
+		(pts
+			(xy 193.04 43.18) (xy 198.12 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2b63e04-cd6c-4f93-bf35-865f4f4b8aca")
+	)
+	(wire
+		(pts
+			(xy 148.59 43.18) (xy 148.59 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba9705a4-90a2-4fc9-9eaf-b8fe91a859e7")
+	)
+	(wire
+		(pts
+			(xy 193.04 52.07) (xy 250.19 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfcc634c-021d-4c4a-a5c9-7d02d1179d0a")
+	)
+	(wire
+		(pts
+			(xy 226.06 45.72) (xy 209.55 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d034fa6a-fcc1-46df-94ab-df1c61708bed")
+	)
+	(wire
+		(pts
+			(xy 250.19 26.67) (xy 203.2 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "daeef014-fe2f-478f-96f5-b275b6ba6848")
+	)
+	(wire
+		(pts
+			(xy 181.61 58.42) (xy 193.04 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1b89578-cd18-4ac5-93b7-67f286ce835c")
 	)
 	(global_label "GND"
 		(shape bidirectional)
@@ -2242,7 +2818,7 @@
 	)
 	(global_label "Vsys"
 		(shape output)
-		(at 214.63 59.69 180)
+		(at 137.16 62.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2252,7 +2828,7 @@
 		)
 		(uuid "10425e48-faf4-4268-a0b6-0f51e1720125")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.5324 59.69 0)
+			(at 130.0624 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2280,6 +2856,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape output)
+		(at 234.95 43.18 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "16b27cb8-2cb0-438d-b46d-6f763cc43c7e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.95 50.0357 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -2572,7 +3170,7 @@
 	)
 	(global_label "GND"
 		(shape output)
-		(at 198.12 38.1 180)
+		(at 137.16 41.91 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2582,7 +3180,7 @@
 		)
 		(uuid "ea3ebf5a-055e-4b88-bfa7-7d7b39cce30b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.2643 38.1 0)
+			(at 130.3043 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2660,8 +3258,7 @@
 	)
 	(symbol
 		(lib_id "SLW-864574-5A-RA-N-D:SLW-864574-5A-RA-N-D")
-		(at 209.55 40.64 0)
-		(mirror y)
+		(at 226.06 35.56 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2669,7 +3266,7 @@
 		(dnp no)
 		(uuid "034b4724-d6fc-4642-b581-35c6aa8a8241")
 		(property "Reference" "S1"
-			(at 209.55 33.02 0)
+			(at 227.584 38.354 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2677,7 +3274,7 @@
 			)
 		)
 		(property "Value" "SLW-864574-5A-RA-N-D"
-			(at 209.55 35.56 0)
+			(at 219.456 30.226 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2685,7 +3282,7 @@
 			)
 		)
 		(property "Footprint" "Library:SW_SLW-864574-5A-RA-N-D"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2695,7 +3292,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2704,7 +3301,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2713,7 +3310,7 @@
 			)
 		)
 		(property "MF" "Same Sky"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2723,7 +3320,7 @@
 			)
 		)
 		(property "Description_1" "8.6 x 4.5 x 6.2 mm, 5 mm Raised Slide Actuator, Right Angle, Through Hole, Slide Switch"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2733,7 +3330,7 @@
 			)
 		)
 		(property "Package" "None"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2743,7 +3340,7 @@
 			)
 		)
 		(property "Price" "None"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2753,7 +3350,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/SLW-864574-5A-RA-N-D/Same+Sky/view-part/?ref=eda"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2763,7 +3360,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2773,7 +3370,7 @@
 			)
 		)
 		(property "PARTREV" "1.01"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2783,7 +3380,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SLW-864574-5A-RA-N-D/Same+Sky/view-part/?ref=snap"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2793,7 +3390,7 @@
 			)
 		)
 		(property "MP" "SLW-864574-5A-RA-N-D"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2803,7 +3400,7 @@
 			)
 		)
 		(property "Availability" "In Stock"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2813,7 +3410,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Same Sky"
-			(at 209.55 40.64 0)
+			(at 226.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2911,8 +3508,137 @@
 		)
 	)
 	(symbol
+		(lib_id "MAX1724EZK50+T:MAX1724EZK50+T")
+		(at 193.04 43.18 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "15ab906e-091c-45b6-9b5e-4465d1c6d344")
+		(property "Reference" "IC1"
+			(at 179.07 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MAX1724EZK50+T"
+			(at 179.07 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:SOT95P275X110-5N"
+			(at 168.91 138.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.analog.com/media/en/technical-documentation/data-sheets/max1722-max1724.pdf"
+			(at 168.91 238.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "1.5A IQ, Step-Up DC-DC Converters  in Thin SOT23-5"
+			(at 193.04 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.1"
+			(at 168.91 438.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "700-MAX1724EZK50T"
+			(at 168.91 538.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Analog-Devices-Maxim-Integrated/MAX1724EZK50%2bT?qs=1THa7WoU59EvvG1ye0TdGQ%3D%3D"
+			(at 168.91 638.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Analog Devices"
+			(at 168.91 738.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "MAX1724EZK50+T"
+			(at 168.91 838.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "892cfa29-a3c7-42d4-8717-b9213ccf25ff")
+		)
+		(pin "3"
+			(uuid "f63a88b9-70da-417c-9161-50c1dedf670f")
+		)
+		(pin "4"
+			(uuid "8ce8d836-1e50-4ff1-adbc-6a51b6ff7015")
+		)
+		(pin "5"
+			(uuid "1f47f5da-fa1a-4d27-b721-0b1dad717601")
+		)
+		(pin "2"
+			(uuid "bbee6d9a-59ea-430a-b71a-06f443255490")
+		)
+		(instances
+			(project ""
+				(path "/5785d8ed-438b-4398-9b9b-75da588fdcbe"
+					(reference "IC1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
-		(at 227.33 49.53 0)
+		(at 138.43 52.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2921,7 +3647,7 @@
 		(fields_autoplaced yes)
 		(uuid "5669b29e-c21e-47f7-8dc3-7fb81fe37864")
 		(property "Reference" "C1"
-			(at 231.14 48.2599 0)
+			(at 142.24 50.7999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2930,7 +3656,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 231.14 50.7999 0)
+			(at 142.24 53.3399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2939,7 +3665,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 228.2952 53.34 0)
+			(at 139.3952 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2948,7 +3674,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 227.33 49.53 0)
+			(at 138.43 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2957,7 +3683,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 227.33 49.53 0)
+			(at 138.43 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2975,6 +3701,144 @@
 			(project ""
 				(path "/5785d8ed-438b-4398-9b9b-75da588fdcbe"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 209.55 41.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5c9ce298-f3bb-4567-9dd0-f574e1169359")
+		(property "Reference" "C2"
+			(at 213.36 40.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 213.36 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 210.5152 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 209.55 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 209.55 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "69564cd9-51e1-47fe-b792-49b3a018520b")
+		)
+		(pin "2"
+			(uuid "5e44aa32-4191-4f15-ad29-0ff2c2d02dca")
+		)
+		(instances
+			(project "esp32 room pcb"
+				(path "/5785d8ed-438b-4398-9b9b-75da588fdcbe"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 177.8 58.42 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8578bb7f-a67d-4ee2-94c0-22e9346b88f6")
+		(property "Reference" "L1"
+			(at 177.8 53.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "L"
+			(at 177.8 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Library:SRR1260100M"
+			(at 177.8 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 177.8 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Inductor"
+			(at 177.8 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7c54c3e3-12de-4a14-8dbc-fe915a7e2820")
+		)
+		(pin "2"
+			(uuid "ae8989de-cca2-49d2-80ec-1642777233e5")
+		)
+		(instances
+			(project ""
+				(path "/5785d8ed-438b-4398-9b9b-75da588fdcbe"
+					(reference "L1")
 					(unit 1)
 				)
 			)

@@ -9,7 +9,7 @@
 RTC_DATA_ATTR char new_day;
 RTC_DATA_ATTR unsigned long long int night_time;
 extern RTC_DATA_ATTR char name_room[64];
-extern RTC_DATA_ATTR char old_message[400];
+extern RTC_DATA_ATTR char old_message[512];
 extern const char name_room_const[];
 
 void setup() {
