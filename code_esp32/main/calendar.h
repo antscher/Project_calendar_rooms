@@ -17,7 +17,7 @@
 #define beginning_night_hour 20  // The start hour of the night
 #define beginning_night_minutes 0  // The start minute of the night
 
-//hours for the waking up after the night sleeping
+//hours for the waking up after the night sleeping,take 15 minutes of margin
 #define ending_night_hour 7  // The wake-up hour after the night
 #define ending_night_minutes 0  // The wake-up minute after the night
 

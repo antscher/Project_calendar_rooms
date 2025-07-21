@@ -54,7 +54,8 @@ const char name_room_const[] = "ROOM_NAME TO DISPLAY";
 - See Hardware/README.md for detailed specifications
 
 ### 3. Software Dependencies
-- Arduino IDE with ESP32 board support (ESP32 S2 Dev kit) (tested v3.2.0)
+Install this librairies if needed 
+- Arduino IDE with ESP32 by espressif in the board manage (especially ESP32 S2 Dev Module) (tested v3.2.0)
 - Required Libraries:
   - PubSubClient (tested v2.8)
   - WiFi (built in)
@@ -62,7 +63,7 @@ const char name_room_const[] = "ROOM_NAME TO DISPLAY";
 
 ### 4. Building and Flashing
 1. Open the project in Arduino IDE
-2. Select ESP32-S2 Dev kit board
+2. Select ESP32-S2 Dev Module board
 3. Install required libraries
 4. Compile and upload to ESP32 with parameters of esp 32 as : 
 - USB CDC on boot : "Enabeled"
