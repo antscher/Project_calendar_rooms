@@ -15,7 +15,6 @@ extern const char name_room_const[];
 void setup() {
   delay(500); // Wait for voltage to stabilize
   Serial.begin(115200);
-  delay(500); 
   Serial.println("Boot OK");
   check_rtc_data();
 
@@ -71,7 +70,6 @@ void setup() {
     // Nothing to do
     action = 'n';
   }
-    delay(500);
   switch (action) {
     case 'c' : { // Calendar mode
       nvs_flash_init();
@@ -136,6 +134,7 @@ void setup() {
       name_room[sizeof(name_room) - 1] = '\0';  // Ensure string is null-terminated
       save_name_room_to_flash();
       time_to_sleep = 1;
+      delay(20);
 
     break;  }
 

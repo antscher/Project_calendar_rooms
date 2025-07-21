@@ -1,6 +1,5 @@
 #include "calendar.h"
-#include <cstring>
-#include <cstdlib>
+
 
 // This function is used to create a calendar event (Class) with all the information necessary to know for this event
 // Message is extracted from the global message
@@ -24,7 +23,7 @@ CalendarEvent::CalendarEvent(const char* message) {
     char desc_temp[MAX_DESCRIPTION_LENGTH];
     int b_day, b_month, e_day, e_month, b_hour, b_minutes, e_hour, e_minutes;
     
-    int parsed = sscanf(message, "%127[^]]%*c%d%*c%d%*c%d%*c%d%*c%d%*c%d%*c%d%*c%d",
+    int parsed = sscanf(message, "%255[^]]%*c%d%*c%d%*c%d%*c%d%*c%d%*c%d%*c%d%*c%d",
                        desc_temp, &b_day, &b_month, &e_day, &e_month, 
                        &b_hour, &b_minutes, &e_hour, &e_minutes);
     
@@ -294,4 +293,34 @@ bool operator==(const CalendarEvent& lhs, const CalendarEvent& rhs) {
            lhs.getEndingHour()       == rhs.getEndingHour() &&
            lhs.getEndingMinutes()    == rhs.getEndingMinutes() &&
            lhs.isVide()              == rhs.isVide();
+}
+
+/******************************************************************************
+function:    Extract room name from update message format: "uYYYY-MM-DDThh:mm[ROOM_NAME"
+parameter:
+    message     : Raw message string containing the room name after '['
+    output      : Buffer to store the extracted room name
+    output_size : Size of the output buffer
+******************************************************************************/
+void extract_room_name(const String& message, char* output, size_t output_size) {
+    if (output == nullptr || output_size == 0) {
+        return;
+    }
+    
+    // Find the position of '['
+    const char* msg = message.c_str();
+    const char* bracket = strchr(msg, '[');
+    
+    if (bracket == nullptr) {
+        output[0] = '\0';
+        return;
+    }
+    
+    // Copy everything after '[' to output
+    size_t len = strlen(bracket + 1);
+    if (len > output_size - 1) {
+        len = output_size - 1;
+    }
+    strncpy(output, bracket + 1, len);
+    output[len] = '\0';
 }

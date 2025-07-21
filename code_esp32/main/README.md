@@ -68,8 +68,8 @@ const char name_room_const[] = "ROOM_NAME TO DISPLAY";
 - USB CDC on boot : "Enabeled"
 - CPU frequency : "160MHz"
 - Core debug "None"
-- Erase all flash : "Enabeled"
-- Flash frequency : "80 MHz"
+- Erase all flash : "Enabeled" (or "Disabled" for saving NVS memory)
+- Flash frequency : "40 MHz"
 - Flash Mode : "QIO"
 - JTAG Adapter : "Disabeled"
 - USB Firmware MSC : "Huge APP (3MB No OTA/1 MB SPIFFS)"
