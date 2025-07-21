@@ -7,7 +7,7 @@ WiFiClient espClient; // WiFi client
 PubSubClient client(espClient); // MQTT client
 
 String message = ""; // Message received via MQTT
-RTC_DATA_ATTR char old_message[400];
+RTC_DATA_ATTR char old_message[512];
 
 
 /******************************************************************************
@@ -90,14 +90,29 @@ return:
 bool checkAndUpdateMessage(String message) {
   String old_msg_str = String(old_message);
   if ((message[0] == 'c') && (old_message[0] == 'c')){
-    Now actual_date(calendar_string_i(message,0));
-    CalendarEvent calendar1(calendar_string_i(message,1));
-    CalendarEvent calendar2(calendar_string_i(message,2));
-    CalendarEvent calendar3(calendar_string_i(message,3));
-    Now old_date(calendar_string_i(old_msg_str,0));
-    CalendarEvent calendar1_old(calendar_string_i(old_msg_str,1));
-    CalendarEvent calendar2_old(calendar_string_i(old_msg_str,2));
-    CalendarEvent calendar3_old(calendar_string_i(old_msg_str,3));
+    char date_buffer[64], old_date_buffer[64];
+    char event_buffer1[256], event_buffer2[256], event_buffer3[256];
+    char old_event_buffer1[256], old_event_buffer2[256], old_event_buffer3[256];
+    
+    calendar_string_i(message, 0, date_buffer, sizeof(date_buffer));
+    calendar_string_i(message, 1, event_buffer1, sizeof(event_buffer1));
+    calendar_string_i(message, 2, event_buffer2, sizeof(event_buffer2));
+    calendar_string_i(message, 3, event_buffer3, sizeof(event_buffer3));
+    
+    calendar_string_i(old_msg_str, 0, old_date_buffer, sizeof(old_date_buffer));
+    calendar_string_i(old_msg_str, 1, old_event_buffer1, sizeof(old_event_buffer1));
+    calendar_string_i(old_msg_str, 2, old_event_buffer2, sizeof(old_event_buffer2));
+    calendar_string_i(old_msg_str, 3, old_event_buffer3, sizeof(old_event_buffer3));
+    
+    Now actual_date(date_buffer);
+    CalendarEvent calendar1(event_buffer1);
+    CalendarEvent calendar2(event_buffer2);
+    CalendarEvent calendar3(event_buffer3);
+    Now old_date(old_date_buffer);
+    CalendarEvent calendar1_old(old_event_buffer1);
+    CalendarEvent calendar2_old(old_event_buffer2);
+    CalendarEvent calendar3_old(old_event_buffer3);
+    
     if (((calendar1 == calendar1_old)  || (!actual_date.eventIsToday(calendar1) && !old_date.eventIsToday(calendar1_old)))
         && (actual_date.eventOnGoing(calendar1) == old_date.eventOnGoing(calendar1_old) )
         && ((calendar2 == calendar2_old) || (!actual_date.eventIsToday(calendar2) && !old_date.eventIsToday(calendar2_old)))

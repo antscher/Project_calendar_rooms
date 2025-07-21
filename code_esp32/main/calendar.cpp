@@ -1,20 +1,13 @@
 #include "calendar.h"
-#include <sstream> // Pour std::istringstream
-#include <stdexcept> // Pour std::invalid_argument
+#include <cstring>
+#include <cstdlib>
 
 // This function is used to create a calendar event (Class) with all the information necessary to know for this event
 // Message is extracted from the global message
-CalendarEvent::CalendarEvent(std::string message) {
-    std::istringstream stream(message);
-    std::string desc;
-    int b_day, b_month;
-    int e_day, e_month;
-    int b_hour, b_minutes;
-    int e_hour, e_minutes;
-
+CalendarEvent::CalendarEvent(const char* message) {
     // Case of there being fewer events than expected, a new empty event will be created
-    if (message == " ") {
-        description = "";
+    if (message == nullptr || strcmp(message, " ") == 0 || strlen(message) == 0) {
+        description[0] = '\0';
         beginning_day = 0;
         beginning_month = 0;
         ending_day = 0;
@@ -27,19 +20,17 @@ CalendarEvent::CalendarEvent(std::string message) {
         return;
     }
 
-    // Separate all the information from message to populate the class
-    if (std::getline(stream, desc, ']') &&
-        (stream >> b_day) && stream.ignore(1) &&
-        (stream >> b_month) && stream.ignore(1) &&
-        (stream >> e_day) && stream.ignore(1) &&
-        (stream >> e_month) && stream.ignore(1) &&
-        (stream >> b_hour) && stream.ignore(1) &&
-        (stream >> b_minutes) && stream.ignore(1) &&
-        (stream >> e_hour) && stream.ignore(1) &&
-        (stream >> e_minutes)) {
-        
-        // Assign the extracted values to class attributes
-        description = desc;
+    // Parse the message using sscanf for better memory efficiency
+    char desc_temp[MAX_DESCRIPTION_LENGTH];
+    int b_day, b_month, e_day, e_month, b_hour, b_minutes, e_hour, e_minutes;
+    
+    int parsed = sscanf(message, "%127[^]]%*c%d%*c%d%*c%d%*c%d%*c%d%*c%d%*c%d%*c%d",
+                       desc_temp, &b_day, &b_month, &e_day, &e_month, 
+                       &b_hour, &b_minutes, &e_hour, &e_minutes);
+    
+    if (parsed == 9) {
+        strncpy(description, desc_temp, MAX_DESCRIPTION_LENGTH - 1);
+        description[MAX_DESCRIPTION_LENGTH - 1] = '\0';
         beginning_day = b_day;
         beginning_month = b_month;
         ending_day = e_day;
@@ -50,57 +41,67 @@ CalendarEvent::CalendarEvent(std::string message) {
         ending_minutes = e_minutes;
         vide = false;  // Event is not empty
     } else {
-        throw std::invalid_argument("Invalid message format for CalendarEvent");
+        // Invalid format - create empty event
+        description[0] = '\0';
+        beginning_day = 0;
+        beginning_month = 0;
+        ending_day = 0;
+        ending_month = 0;
+        beginning_hour = 0;
+        ending_hour = 0;
+        beginning_minutes = 0;
+        ending_minutes = 0;
+        vide = true;
     }
 }
 
-Now::Now(std::string message) {
-    std::istringstream stream(message);
+Now::Now(const char* message) {
+    if (message == nullptr || strlen(message) == 0) {
+        year = 0;
+        month = 0;
+        day = 0;
+        hour = 0;
+        minutes = 0;
+        return;
+    }
+
+    // Parse using sscanf for better performance
     int nyear, nmonth, nday, nhour, nminutes;
-    if (message == ""){
+    int parsed = sscanf(message, "%d%*c%d%*c%d%*c%d%*c%d", 
+                       &nyear, &nmonth, &nday, &nhour, &nminutes);
+    
+    if (parsed == 5) {
+        year = nyear;
+        month = nmonth;
+        day = nday;
+        hour = nhour;
+        minutes = nminutes;
+    } else {
         year = 0;
         month = 0;
         day = 0;
         hour = 0;
         minutes = 0;
     }
-
-
-    // Extraction of the date (year-month-day-hour-minute)
-    else if ((stream >> nyear) && stream.ignore(1) &&   // Read the year and ignore the '-'
-        (stream >> nmonth) && stream.ignore(1) &&  // Read the month and ignore the '-'
-        (stream >> nday) && stream.ignore(1) &&   // Read the day
-        (stream >> nhour) && stream.ignore(1) &&  
-        (stream >> nminutes))  {                        
-
-        year = nyear;
-        month = nmonth;
-        day = nday;
-        hour = nhour;
-        minutes = nminutes;
-
-    } else {
-        throw std::invalid_argument("Invalid message format for CalendarEvent (invalid date format)");
-    }
 }
 
 /******************************************************************************
-function:    Check if the given event is currently ongoing
+function:    Check if the given event is currently ongoing (optimized)
 parameter:
     event : The calendar event to check
 return:
     true  : The event is ongoing at the current time
     false : The event has not yet started
 ******************************************************************************/
-bool Now::eventOnGoing(CalendarEvent event){
+OPTIMIZE_FOR_SPEED bool Now::eventOnGoing(CalendarEvent event){
     // Check if the event has already started based on the current date and time
-    if (event.isVide()){
+    if (UNLIKELY(event.isVide())){
         return false;
     }
     if (event.getBeginningMonth() < month) {
         return true;
     } 
-    else if (event.getBeginningMonth() == month) {
+    else if (LIKELY(event.getBeginningMonth() == month)) {
         if (event.getBeginningDay() < day) { 
             return true;
         }
@@ -223,34 +224,67 @@ bool Now::nightMode(){
 /******************************************************************************
 function:    Extract the i-th calendar string from a formatted message
 parameter:
-    message : Raw calendar message string (delimited by '[')
-    i       : Index of the segment to extract
-return:
-    std::string : The extracted segment or " " if not found
+    message     : Raw calendar message string (delimited by '[')
+    i           : Index of the segment to extract
+    output      : Buffer to store the extracted segment
+    output_size : Size of the output buffer
 ******************************************************************************/
-std::string calendar_string_i(String message, int i) {
-    std::string msg = std::string(message.c_str());
-    std::istringstream stream(msg);
-    std::string segment;
-    int current_index = 0;
-
-    // Iterate through the segments separated by '['
-    while (std::getline(stream, segment, '[')) {
-        if (current_index == i) {
-            if (i == 0) {
-                return segment.substr(1);  // Return segment after the first character
-            }
-            return segment;  // Return the segment at index i
-        }
-        current_index++;
+void calendar_string_i(const String& message, int i, char* output, size_t output_size) {
+    if (output == nullptr || output_size == 0) {
+        return;
     }
-
-    // If index i is out of bounds
-    return " ";
+    
+    // Initialize output buffer
+    output[0] = '\0';
+    
+    const char* msg = message.c_str();
+    int current_index = 0;
+    const char* segment_start = msg;
+    const char* segment_end;
+    
+    // Handle special case for index 0
+    if (i == 0) {
+        segment_end = strchr(msg, '[');
+        if (segment_end == nullptr) {
+            segment_end = msg + strlen(msg);
+        }
+        if (segment_start < segment_end && msg[0] != '\0') {
+            size_t len = min((size_t)(segment_end - segment_start - 1), output_size - 1);
+            strncpy(output, segment_start + 1, len);
+            output[len] = '\0';
+        }
+        return;
+    }
+    
+    // Find the i-th segment
+    const char* current_pos = msg;
+    while (current_index < i && (current_pos = strchr(current_pos, '[')) != nullptr) {
+        current_index++;
+        current_pos++;
+        
+        if (current_index == i) {
+            segment_start = current_pos;
+            segment_end = strchr(segment_start, '[');
+            if (segment_end == nullptr) {
+                segment_end = segment_start + strlen(segment_start);
+            }
+            
+            size_t len = min((size_t)(segment_end - segment_start), output_size - 1);
+            strncpy(output, segment_start, len);
+            output[len] = '\0';
+            return;
+        }
+    }
+    
+    // If index i is out of bounds, set output to " "
+    if (output_size > 1) {
+        output[0] = ' ';
+        output[1] = '\0';
+    }
 }
 
 bool operator==(const CalendarEvent& lhs, const CalendarEvent& rhs) {
-    return lhs.getDescription()      == rhs.getDescription() &&
+    return strcmp(lhs.getDescription(), rhs.getDescription()) == 0 &&
            lhs.getBeginningDay()     == rhs.getBeginningDay() &&
            lhs.getBeginningMonth()   == rhs.getBeginningMonth() &&
            lhs.getEndingDay()        == rhs.getEndingDay() &&
