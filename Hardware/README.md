@@ -76,5 +76,5 @@ For the screen, tape it or glue it.
 ### Frame Images
 
 See the following images for reference:
-- ![Frame closed](../../images/frame_closed.jpg)
-- ![Frame component](../../images/frame_with_component.jpg)
+- ![Frame closed](/images/frame_closed.jpg)
+- ![Frame component](/images/frame_with_component.jpg)
