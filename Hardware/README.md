@@ -60,15 +60,21 @@ You can open it and modify it with Kicad, may be you will need to downloads some
 You can purshase it, but you have to first expot in gerber file.
 All of the componnent required are in the "Component list.xlsx", you can change some component by similar ones but make sure the footprint is compatible (or modify it).
 
-## The support of the cadre 
+## The support of the frame
 
-It is made in fusion 360, you have access to the stl to print the design
-Use M3 screws to attach it
+It is made in Fusion 360, you have access to the STL file to print the design.
+Use M3 screws to attach it.
 
-## The cadre
+## The frame
 
-The cadre is made with inskape, it is a .svg
-It is desin for wood of 3mm
-It need to be cut (red lines) and engrave (blue surface)
-You need to glue it exepct te back that just fit in, so you can remove it after
-For the screen, scotch it or glue it
+The frame is made with Inkscape, it is a .svg file.
+It is designed for 3mm wood.
+It needs to be cut (red lines) and engraved (blue surface).
+You need to glue it except the back, which just fits in so you can remove it after.
+For the screen, tape it or glue it.
+
+### Frame Images
+
+See the following images for reference:
+- ![Frame closed](../../images/frame_closed.jpg)
+- ![Frame component](../../images/frame_with_component.jpg)
