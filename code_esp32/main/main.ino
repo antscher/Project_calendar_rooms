@@ -13,7 +13,7 @@ extern RTC_DATA_ATTR char old_message[512];
 extern const char name_room_const[];
 
 void setup() {
-  delay(500); // Wait for voltage to stabilize
+  delay(700); // Wait for voltage to stabilize
   Serial.begin(115200);
   Serial.println("Boot OK");
   check_rtc_data();
@@ -134,7 +134,7 @@ void setup() {
       name_room[sizeof(name_room) - 1] = '\0';  // Ensure string is null-terminated
       save_name_room_to_flash();
       time_to_sleep = 1;
-      delay(20);
+      delay(100);
 
     break;  }
 
@@ -145,7 +145,7 @@ void setup() {
 
   Serial.print("Time to sleep ");
   Serial.println(time_to_sleep);
-
+  delay(100);
   // ESP32 sleeps in deep mode (it will never enter the loop function)
   esp_sleep_enable_timer_wakeup(uS_TO_MIN_FACTOR*time_to_sleep);
   Serial.println("Entering Deep Sleep mode");
