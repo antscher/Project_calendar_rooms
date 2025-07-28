@@ -8,10 +8,10 @@
 #include "optimization_config.h"
 
 #define nb_events 5  // Define the number of events
-#define MAX_DESCRIPTION_LENGTH 128  // Maximum length for event descriptions
+#define MAX_DESCRIPTION_LENGTH 256  // Maximum length for event descriptions
 
 //Time between each refresh
-#define TIME_BEFORE_REFRESH  5  // Time interval in minutes before refresh
+#define TIME_BEFORE_REFRESH  15  // Time interval in minutes before refresh
 
 //hours for the sleeping, the night 
 #define beginning_night_hour 20  // The start hour of the night
